@@ -24,10 +24,14 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.ITestResult;
 
 import atu.testng.reports.ATUReports;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.LogStatus;
 import com.weather.driver.Driver;
+import com.weather.driver.PropertyFile;
 /**
  * 
  * @author Naresh
@@ -44,22 +48,34 @@ public class SmokeTest_c334144_Verify_WeatheFX_ApiCall extends Driver{
 	
 	@SuppressWarnings("deprecation")
 	public void Verify_WeatherFX_Apicall() throws ParseException, Exception {
+		WFXSteps =1;
+		ExtentReports reporter = Driver.getInstance();
+		logger = reporter.startTest("Verify WFXTG Call test case").assignCategory("Smoke_Test");
+		logger.log(LogStatus.PASS, "Started WFXTG Call Testcase");
+		//reading filr from Propery file
+		 Driver.property();
+			PropertyFile.property();
 
 		System.out.println("Case Started");
 
-		ATUReports.add("Launching the app",false);
+		ATUReports.add("Launch the app",false);
+		logger.log(LogStatus.PASS, "Launch the app");
+		WFXSteps = WFXSteps+1;
+		MobileElement el = (MobileElement) Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[2]");
 		
-		Ad.findElementByName("_aCurTempLabel").click();
-		String RightNow = Ad.findElementByName("Right Now").getText();
+		el.click();
+		//Ad.findElementByName("_aCurTempLabel").click();
+		String RightNow = Ad.findElementByName("NOW").getText();
 		System.out.println("RightNow Page name is ::"+RightNow);
 		ATUReports.add("Verify User on Now page",false);
+		logger.log(LogStatus.PASS, "Verify User on Now page");
 		//run command for getting logs in idevicesyslog.log
-		String[] str ={"/bin/bash", "-c", "/usr/local/bin/idevicesyslog.log  >> /Users/aparna/Documents/syslog.log"};
+		String[] str ={"/bin/bash", "-c", "/usr/local/bin/idevicesyslog.log  >>"+ properties.getProperty("LogFilePath")};
 		Process p = Runtime.getRuntime().exec(str);
 
 		
-		
-		BufferedReader r = new BufferedReader(new FileReader("/Users/aparna/Documents/syslog.log"));
+		WFXSteps = WFXSteps+1;
+		BufferedReader r = new BufferedReader(new FileReader(properties.getProperty("LogFilePath")));
 
 		String line = "";
 		String allLine = "";
@@ -71,11 +87,11 @@ public class SmokeTest_c334144_Verify_WeatheFX_ApiCall extends Driver{
 
 		}
 
-		String FilePath = "/Users/aparna/Documents/syslog.log";
+		String FilePath = properties.getProperty("LogFilePath");
 
 		  Map<String, String> mapkeys = new HashMap<String, String>();
 
-		  try {
+		//  try {
 				FileInputStream fstream = new FileInputStream(FilePath);
 				BufferedReader br = new BufferedReader(new InputStreamReader(
 						fstream));
@@ -90,7 +106,8 @@ public class SmokeTest_c334144_Verify_WeatheFX_ApiCall extends Driver{
 				 sb.append(strLine);
 				
 				 }
-				 ATUReports.add("Verifying the WFXTG Values in feed_1 Call",false);
+				 ATUReports.add("Verify the WFXTG Values in feed_1 Call",false);
+				 logger.log(LogStatus.PASS, "Verify the WFXTG Values in feed_1 Call");
 //				 for (int i=0; i<5)
 				 if(sb.toString().contains("Requesting ad: /7646/app_iphone_us/display/feed/feed_1")){
 					// System.out.println("index of first one ::::"+sb.toString().indexOf("Requesting ad: /7646/app_iphone_us/display/feed/feed_1 with parameters: {"));
@@ -111,6 +128,7 @@ public class SmokeTest_c334144_Verify_WeatheFX_ApiCall extends Driver{
 		      }
 		      for(Entry<String, String> entryKeys : mapkeys.entrySet()){
 		    	  //System.out.println("key : "+entryKeys.getKey() + "----"+"value:"+entryKeys.getValue());
+		    	  
 		    	  if(entryKeys.getKey().contains("wfxtg"))
 		    	  {
 		    		  System.out.println("wfxtg values are :" + entryKeys.getValue());
@@ -118,24 +136,35 @@ public class SmokeTest_c334144_Verify_WeatheFX_ApiCall extends Driver{
 		    		  // Assert on WFX TG value
 		    		  Assert.assertNotNull(entryKeys.getValue());
 		    		  
-		    		  ATUReports.add("WFXTG values are presented in Feed_1 Call",false);
+		    		  ATUReports.add("WFXTG values are present in Feed_1 Call",false);
+		    		  logger.log(LogStatus.PASS, "WFXTG values are present in Feed_1 Call");
 		    	  }
+		    		  WFXSteps = WFXSteps+1;
+		    		  //Assert.fail();
+		    	  
 		    	 
 		      }
 		 
 					 }
+				 WFXSteps=0;
 				 br.close();
+				 
 
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
 
-		
+//				 reporter.endTest(logger);
+//					reporter.flush();
 
 		System.out.println("Verification of wfxtg test case done");
-
+		
+		reporter.endTest(logger);
+		reporter.flush();
 
 	}
+	
+	
 }
 
 

@@ -17,10 +17,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.ITestResult;
 
 import atu.testng.reports.ATUReports;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.LogStatus;
 import com.weather.driver.Driver;
+import com.weather.driver.PropertyFile;
 /**
  * 
  * @author Naresh
@@ -31,15 +35,23 @@ public class SmokeTest_C334145_factualCall extends Driver {
 	@SuppressWarnings("deprecation")
 	public void verify_facualcal_onfresh_launch() throws InterruptedException, IOException
 	{
+		FactSteps=1;
+		ExtentReports reporter = Driver.getInstance();
+		logger = reporter.startTest("Verify Factual Call test case").assignCategory("Smoke_Test");
+		logger.log(LogStatus.PASS, "Started Factual Call Testcase");
+		//reading filr from Propery file
+		 Driver.property();
+			PropertyFile.property();
 
-		ATUReports.add("Launching the app",false);
+		ATUReports.add("Launch the app",false);
+		logger.log(LogStatus.PASS, "Launch the app");
 		//run command for getting logs in idevicesyslog.log
-		String[] str ={"/bin/bash", "-c", "/usr/local/bin/idevicesyslog.log  >> /Users/aparna/Documents/syslog.log"};
+		String[] str ={"/bin/bash", "-c", "/usr/local/bin/idevicesyslog.log  >>"+ properties.getProperty("LogFilePath")};
 		Process p = Runtime.getRuntime().exec(str);
 
 
-
-		BufferedReader r = new BufferedReader(new FileReader("/Users/aparna/Documents/syslog.log"));
+		FactSteps=FactSteps+1;
+		BufferedReader r = new BufferedReader(new FileReader(properties.getProperty("LogFilePath")));
 
 		String line = "";
 		String allLine = "";
@@ -51,7 +63,7 @@ public class SmokeTest_C334145_factualCall extends Driver {
 
 		}
 
-		String FilePath = "/Users/aparna/Documents/syslog.log";
+		String FilePath = properties.getProperty("LogFilePath");
 
 		Map<String, String> mapkeys = new HashMap<String, String>();
 
@@ -70,7 +82,8 @@ public class SmokeTest_C334145_factualCall extends Driver {
 				sb.append(strLine);
 
 			}
-			ATUReports.add("Verifying the Factual values(FAUD,FGEO) in Feed_1 Call",false);
+			ATUReports.add("Verify the Factual values(FAUD,FGEO) in Feed_1 Call",false);
+			logger.log(LogStatus.PASS, "Verify the Factual values(FAUD,FGEO) in Feed_1 Call");
 			//				 for (int i=0; i<5)
 			if(sb.toString().contains("Requesting ad: /7646/app_iphone_us/display/feed/feed_1")){
 				// System.out.println("index of first one ::::"+sb.toString().indexOf("Requesting ad: /7646/app_iphone_us/display/feed/feed_1 with parameters: {"));
@@ -97,12 +110,14 @@ public class SmokeTest_C334145_factualCall extends Driver {
 					if(entryKeys.getKey().contains("faud"))
 					{ 
 						faudValue = entryKeys.getValue();
+						FactSteps=FactSteps+1;
 					Assert.assertNotNull(faudValue);
 
 					System.out.println("faud values are :" + faudValue);
 					
-						System.out.println("FAUD value is presented");
-						ATUReports.add("FAUD value is presented",false);
+						System.out.println("FAUD value is present");
+						ATUReports.add("FAUD value is present",false);
+						logger.log(LogStatus.PASS, "FAUD value is present");
 					
 
 
@@ -113,12 +128,14 @@ public class SmokeTest_C334145_factualCall extends Driver {
 					if(entryKeys.getKey().contains("fgeo"))
 					{   
 						fgeoValue = entryKeys.getValue();
+						FactSteps=FactSteps+1;
 					Assert.assertNotNull(fgeoValue);
 
 					System.out.println("fgeo vaues are :" + fgeoValue);
 					
-						System.out.println("FGEO value is presented");
-						ATUReports.add("FGEO value is presented",false);
+						System.out.println("FGEO value is present");
+						ATUReports.add("FGEO value is present",false);
+						logger.log(LogStatus.PASS, "FGEO value is present");
 
 					
 
@@ -129,7 +146,10 @@ public class SmokeTest_C334145_factualCall extends Driver {
 				}
 
 			}
+			FactSteps=0;
 			br.close();
+//			reporter.endTest(logger);
+//			reporter.flush();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -138,5 +158,11 @@ public class SmokeTest_C334145_factualCall extends Driver {
 
 
 		System.out.println("Verification of FactualCall test case done");
+		
+		reporter.endTest(logger);
+		reporter.flush();
 	}
+	
+	
+	
 }

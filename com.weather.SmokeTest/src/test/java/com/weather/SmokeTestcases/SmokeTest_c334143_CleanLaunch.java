@@ -25,7 +25,12 @@ import org.testng.Assert;
 
 import atu.testng.reports.ATUReports;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.LogStatus;
+import com.weather.Genaral.Scroll;
+import com.weather.Genaral.app_Kill_Relaunch;
 import com.weather.driver.Driver;
+import com.weather.driver.PropertyFile;
 /**
  * 
  * @author Naresh
@@ -34,17 +39,29 @@ import com.weather.driver.Driver;
 public class SmokeTest_c334143_CleanLaunch extends Driver{
 
 	@SuppressWarnings("deprecation")
-	public void verify_adcals_onclean_launch() throws InterruptedException, IOException
+	public void verify_adcals_onclean_launch() throws Exception
 	{
+		CleanSteps=1;
+		ExtentReports reporter = Driver.getInstance();
+		logger = reporter.startTest("Verify Clean launch test case").assignCategory("Smoke_Test");
+		//app kill and relaunch the app
+		app_Kill_Relaunch.Kill_realaunch();
+		//reading filr from Propery file
+		Driver.property();
+		PropertyFile.property();
 
 
 		//Scroll the app
 		//pageScrolling.Scroll();
 		String originalContext = Ad.getContext();
 		Ad.context("NATIVE_APP");
-		ATUReports.add("Launching the app",false);
-		
+		CleanSteps=CleanSteps+1;
+		ATUReports.add("Launch the app",false);
+		logger.log(LogStatus.PASS, "Launch the app");
+		CleanSteps=CleanSteps+1;
 		MobileElement Screen = (MobileElement) Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]");
+		//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIACollectionView[1]");
+		//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]");
 		//is number of cells/rows inside table correct
 		List<MobileElement> pages = Screen.findElementsByClassName("UIACollectionView");
 		System.out.println("page Size is "+ pages.size());
@@ -52,24 +69,46 @@ public class SmokeTest_c334143_CleanLaunch extends Driver{
 		System.out.println("page size is ::"+ x);
 		System.out.println("User on first page::");
 
-		//Scroll JS
-		JavascriptExecutor js = (JavascriptExecutor) Ad ;
-		HashMap<String, String> scrollObject = new HashMap<String, String>();
-		scrollObject.put("direction", "down");
+		CleanSteps=CleanSteps+1;
 		//Scrolling to feed_1
-		//Ad.findElementByName("_aCurTempLabel").click();
-		
-		ATUReports.add("Verifying ad calls on the app launch(feed_0,feed_1 to feed_n)",false);
+		//		for(int i=1;i<=2;i++)
+		//		{
+		//			MobileElement el = (MobileElement) Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText["+i+"]");
+		//		   
+		//			System.out.println("Element el is ::"+el.getText());
+		//			
+		//		    if(el.getText().contains(" "))
+		//		    {
+		//		    	System.out.println("Allert present");
+		//		    }else
+		//		    {
+		//		    	el.click();
+		//		    	break;
+		//		    }
+		//		}
 
-		for(int FeedValue=0;FeedValue<=pages.size();FeedValue++)
+		MobileElement el = (MobileElement) Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[2]");
+
+		el.click();
+		ATUReports.add("Verify ad calls on the app launch(feed_0,feed_1 to feed_n)",false);
+		logger.log(LogStatus.PASS, "Verifying ad calls on the app launch(feed_0,feed_1 to feed_n");
+
+
+		for(int FeedValue=0;FeedValue<=pages.size()+1;FeedValue++)
 		{
+
+
+			Scroll.scrolldown();
+			System.out.println("Scroll done");
+
 			//run command for getting logs in idevicesyslog
-			String[] str ={"/bin/bash", "-c", "/usr/local/bin/idevicesyslog  >> /Users/aparna/Documents/syslog.log"};
+			String[] str ={"/bin/bash", "-c", "/usr/local/bin/idevicesyslog  >>" +properties.getProperty("LogFilePath")};
 			Process p = Runtime.getRuntime().exec(str);
 
 			Thread.sleep(5000);
 			//System.out.println("Writing is completed  :" + p.exitValue());
-			BufferedReader r = new BufferedReader(new FileReader("/Users/aparna/Documents/syslog.log"));
+			CleanSteps=CleanSteps+1;
+			BufferedReader r = new BufferedReader(new FileReader(properties.getProperty("LogFilePath")));
 
 			String line = "";
 			String allLine = "";
@@ -79,7 +118,7 @@ public class SmokeTest_c334143_CleanLaunch extends Driver{
 				System.out.println("Sys data is ::"+line);
 			}
 
-			String FilePath = "/Users/aparna/Documents/syslog.log";
+			String FilePath = properties.getProperty("LogFilePath");
 
 			Map<String, String> mapkeys = new HashMap<String, String>();
 
@@ -91,61 +130,77 @@ public class SmokeTest_c334143_CleanLaunch extends Driver{
 				// / read log line by line ------ strLine = br.readLines(6, 10); /
 				StringBuffer sb = new StringBuffer("");
 				while ((strLine = br.readLine()) != null) {
-					// parse strLine to obtain what you want /
-					//System.out.println (strLine);
+
 					sb.append(strLine);
 
 				}
 
+				//verify Feed_0 Vlaues
 				if(FeedValue==0)
 				{
 					String req1 = sb.toString().substring( sb.toString().lastIndexOf("Network request : https://pubads.g.doubleclick.net/gampad/adx?iu=/7646/app_iphone_us/display/bb"));
 					String	req = req1.substring(req1.indexOf("&")+1,req1.indexOf("fltmpc"));
 					System.out.println("Request is ::"+req1);
 					System.out.println("Request data is ::"+req);
-					ATUReports.add("Get the Feed cal data", true);
+					ATUReports.add("Get the Feed call data", true);
 
-					
+
 					if(req1.contains("Network request : https://pubads.g.doubleclick.net/gampad/adx?iu=/7646/app_iphone_us/display/bb"))
 					{
-						System.out.println("Verified Branded Background  Values are present");
+						System.out.println("Verify Branded Background  Values are present");
 						ATUReports.add("BB call is Present", false);
+						logger.log(LogStatus.PASS, "BB call is Present");
 					}else
 					{
-						System.out.println("Branded Background Call is not presented");
-						ATUReports.add("Branded Background Call is not presented",false);
+						CleanSteps=CleanSteps+1;
+						System.out.println("Branded Background Call is not present");
+						ATUReports.add("Branded Background Call is not present",false);
 					}
 
 				}else
-
 					//	Getting and taking feed cals from last				
 					if(sb.toString().contains("Requesting ad: /7646/app_iphone_us/display/feed/feed_"+FeedValue)){
-						// System.out.println("index of first one ::::"+sb.toString().indexOf("Requesting ad: /7646/app_iphone_us/display/feed/feed_1 with parameters: {"));
-						//System.out.println("index of second one ::::"+sb.toString().indexOf("Oct  9 12:43:59 iPod TheWeather[686] <Warning>: Get"));
 						String req1 = sb.toString().substring( sb.toString().lastIndexOf("Requesting ad: /7646/app_iphone_us/display/feed/feed_"+FeedValue+" with parameters: {"));
 						String	req = req1.substring(req1.indexOf("{")+1,req1.indexOf("}"));
 						System.out.println("Request is ::"+req1);
 						if(req1.contains("/7646/app_iphone_us/display/feed/feed_"+FeedValue))
 						{
-							System.out.println("Verified Feed_ "+FeedValue+" Values are present");
-							ATUReports.add("Verified Feed_ "+FeedValue+" Values are present)",false);
+							System.out.println("Verify Feed_ "+FeedValue+" Values are present");
+							ATUReports.add("Verify Feed_ "+FeedValue+" Values are present",false);
+							//logger.log(LogStatus.PASS, "Verified Feed_ "+FeedValue+" Values are present");
+						}else{
+							CleanSteps=CleanSteps+1;
+							System.out.println("Verify Feed_ "+FeedValue+" Values are not present");
+							Assert.fail();
 						}
+
 					}
 
 
-				js.executeScript("mobile: scroll", scrollObject);
-				
-
+				//Scroll.scrolldown()
 				System.out.println("Case Ended");
-		
-			//br.close();
+				CleanSteps=0;
+				//br.close();
 
-		} catch (Exception e) {
-			e.printStackTrace();
-			
+			} catch (Exception e) {
+				e.printStackTrace();
+
+			}
+
+
 		}
-	}
+		logger.log(LogStatus.PASS, "Verify all Feed Values are present");
 
+		reporter.endTest(logger);
+		reporter.flush();
+		//		
+	}
 }
-}
+
+
+
+
+
+
+
 

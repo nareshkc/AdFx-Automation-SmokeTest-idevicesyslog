@@ -7,12 +7,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.Listeners;
 
 import io.appium.java_client.MobileElement;
@@ -25,53 +28,100 @@ import atu.testng.reports.logging.LogAs;
 import atu.testng.selenium.reports.CaptureScreen;
 import atu.testng.selenium.reports.CaptureScreen.ScreenshotOf;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.LogStatus;
 import com.weather.driver.Driver;
+import com.weather.driver.PropertyFile;
 /**
  * 
  * @author Naresh
  *
  */
+
+
+//import com.weather.driver.PropertyFile;
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class,
 	MethodListener.class })
-public class SmokeTest_c334150_Verify_onpulltorefresh extends Driver{
+
+public class SmokeTest_c334150_Verify_onpulltorefresh extends Driver {
+
+
+	//	ExtentReports reporter = Driver.getInstance();
+	//	logger = reporter.startTest("Verify the Pull to Refresh test case").assignCategory("SMOKE TEST");
+
+
 
 	@SuppressWarnings("deprecation")
 	public void Verify_PulltoRefresh() throws IOException, InterruptedException
 	{
+		PulltorefreshSteps=1;
+		ExtentReports reporter = Driver.getInstance();
+		logger = reporter.startTest("Verify pull to refresh test case").assignCategory("Smoke_Test");
 		String originalContext = Ad.getContext();
 		Ad.context("NATIVE_APP");
+		//Read from PropertyFilePath
+		Driver.property();
+		PropertyFile.property();
 
 		//run command for getting logs in idevicesyslog
-		String[] str ={"/bin/bash", "-c", "/usr/local/bin/idevicesyslog  >> /Users/aparna/Documents/syslog.log"};
+		String[] str ={"/bin/bash", "-c", "/usr/local/bin/idevicesyslog  >>"+ properties.getProperty("LogFilePath")};
+		//properties.getProperty("LogFilePath")+""};
 		Process p = Runtime.getRuntime().exec(str);
-		
-		ATUReports.add("Launching the app",false);
-		//Wait for 20 sec fo element presence
-		WebDriverWait wait = new WebDriverWait(Ad, 20);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.name("_aCurTempLabel")));
-		
-		ATUReports.add("On CC Screen,Temperature is found", false);
-	
-		MobileElement el = (MobileElement) Ad.findElementByName("_aCurTempLabel");
-		MobileElement el1 = (MobileElement) Ad.findElementByName("_aHiLowLabel");
-		//_aHiLowLabel_aWxCheckinButton");
-		TouchAction action1 = new TouchAction(Ad);
-		action1.longPress(el).moveTo(el1).release().perform();
-//		ATUReports.add("Test 1", false);
-//		ATUReports.add("p", LogAs.INFO, CaptureScreen(ScreenshotOf.DESKTOP));
-//		ATUReports.add("q", LogAs.PASSED, CaptureScreen(ScreenshotOf.BROWSER_PAGE));
-//		//ATUReports.add("r", LogAs.FAILED, CaptureScreen(ScreenshotOf.DESKTOP));
-//		ATUReports.add("s", LogAs.WARNING, CaptureScreen(ScreenshotOf.BROWSER_PAGE));
-		
-		System.out.println("Scroll Done");
 
-		ATUReports.add("On CC Screen,Pulling the screen to REFRESH", false);
+		ATUReports.add("Launch the app",false);
+		logger.log(LogStatus.PASS, "Launch the apping");
+		PulltorefreshSteps=PulltorefreshSteps+1;	
+		//MobileElement el = null;
+		for(int i=1;i<=2;i++)
+		{
+			MobileElement el = (MobileElement) Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText["+i+"]");
+		   
+			System.out.println("Element el is ::"+el.getText());
+			
+		    if(el.getText().contains(" "))
+		    {
+		    	System.out.println("Allert present");
+		    }else
+		    {
+		    	WebDriverWait wait = new WebDriverWait(Ad, 20);
+				wait.until(ExpectedConditions.visibilityOf(el));
+
+				ATUReports.add("On CC Screen,Temperature is found", false);
+
+				logger.log(LogStatus.PASS, "On CC Screen,Temperature is found");
+
+				//MobileElement el = (MobileElement) Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[1]");
+				//Ad.findElementByName("_aCurTempLabel");
+				PulltorefreshSteps=PulltorefreshSteps+1;	
+				int el2=i+2;
+				MobileElement el1 = (MobileElement) Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText["+el2+"]");
+				//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIACollectionView[1]/UIACollectionCell[1]/UIATableView[1]/UIATableCell[1]
+				//Ad.findElementByName("TODAY");
+				//Ad.findElementByName("_aHiLowLabel");TODAY
+				//_aHiLowLabel_aWxCheckinButton");
+				TouchAction action1 = new TouchAction(Ad);
+				action1.longPress(el).moveTo(el1).release().perform();
+
+
+				System.out.println("Scroll Done");
+
+				ATUReports.add("On CC Screen,Pull the screen to REFRESH", false);
+
+				logger.log(LogStatus.PASS, "On CC Screen,Pull the screen to REFRESH");
+				break;
+		    }
+		}
 		
+		//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[2]
+		//Wait for 20 sec fo element presence
+		
+
 		//Get the BB ad and validate it
-		
+
 		//System.out.println("Writing is completed  :" + p.exitValue());
-		BufferedReader r = new BufferedReader(new FileReader("/Users/aparna/Documents/syslog.log"));
-        
+		PulltorefreshSteps=PulltorefreshSteps+1;
+		BufferedReader r = new BufferedReader(new FileReader(properties.getProperty("LogFilePath")));
+
 		String line = "";
 		String allLine = "";
 
@@ -80,8 +130,9 @@ public class SmokeTest_c334150_Verify_onpulltorefresh extends Driver{
 			System.out.println("Sys data is ::"+line);
 		}
 
-		String FilePath = "/Users/aparna/Documents/syslog.log";
-	
+		PulltorefreshSteps=PulltorefreshSteps+1;
+		String FilePath = properties.getProperty("LogFilePath");
+
 
 		Map<String, String> mapkeys = new HashMap<String, String>();
 
@@ -98,47 +149,51 @@ public class SmokeTest_c334150_Verify_onpulltorefresh extends Driver{
 				sb.append(strLine);
 
 			}
-			
+
 			System.out.println("Sb is  ::"+sb.toString());
-			
+			//			
+			//			if(sb.toString().equals("[connected]"))
+			//			{
+			//				PulltorefreshSteps=PulltorefreshSteps+1;
+			//				System.out.println("Log data is not correct");
+			//				Assert.fail();
+			//			}
+
+			String req1 = sb.toString().substring( sb.toString().lastIndexOf("Network request : https://pubads.g.doubleclick.net/gampad/adx?iu=/7646/app_iphone_us/display/bb"));
+			String	req = req1.substring(req1.indexOf("&")+1,req1.indexOf("fltmpc"));
+			System.out.println("Request is ::"+req1);
+			System.out.println("Request data is ::"+req);
+			ATUReports.add("Get the Feed Call Data", true);
+
+			if(req1.contains("Network request : https://pubads.g.doubleclick.net/gampad/adx?iu=/7646/app_iphone_us/display/bb"))
+			{
+				System.out.println("Verified Branded Background call is present");
+				ATUReports.add("Branded Background call is present and it's value is verified", false);
+				logger.log(LogStatus.PASS, "Branded Background call is present and it's value is verified");
+			}else
+			{
+				PulltorefreshSteps=PulltorefreshSteps+1;
+				System.out.println("Branded Background Value is not present");
+				ATUReports.add("Branded Background call is NOT presented", false);
+				logger.log(LogStatus.PASS, "Branded Background call is NOT presented");
+				Assert.fail();
+			}
+
+
+			System.out.println("Case Ended");
+			PulltorefreshSteps=0;
 			
 
-//			if(sb.toString().contains("adx?iu/7646/app_iphone_us/display/bb")){
-//				sys
-//			}
-			
-				// System.out.println("index of first one ::::"+sb.toString().indexOf("Requesting ad: /7646/app_iphone_us/display/feed/feed_1 with parameters: {"));
-				//System.out.println("index of second one ::::"+sb.toString().indexOf("Oct  9 12:43:59 iPod TheWeather[686] <Warning>: Get"));
-					String req1 = sb.toString().substring( sb.toString().lastIndexOf("Network request : https://pubads.g.doubleclick.net/gampad/adx?iu=/7646/app_iphone_us/display/bb"));
-					String	req = req1.substring(req1.indexOf("&")+1,req1.indexOf("fltmpc"));
-					System.out.println("Request is ::"+req1);
-					System.out.println("Request data is ::"+req);
-					ATUReports.add("Get the Feed cal  data", true);
-					
-					if(req1.contains("Network request : https://pubads.g.doubleclick.net/gampad/adx?iu=/7646/app_iphone_us/display/bb"))
-					{
-						System.out.println("Verified Branded Background call is present");
-						  ATUReports.add("Branded Background call is present and verified it's value", false);
-					}else
-					{
-						System.out.println("Branded Background Value is not present");
-						 ATUReports.add("Branded Background call is NOT presented", false);
-					}
-
-
-				System.out.println("Case Ended");
-			
 			br.close();
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		reporter.endTest(logger);
+		reporter.flush();
+
 	}
 
-	private CaptureScreen CaptureScreen(ScreenshotOf desktop) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }
 

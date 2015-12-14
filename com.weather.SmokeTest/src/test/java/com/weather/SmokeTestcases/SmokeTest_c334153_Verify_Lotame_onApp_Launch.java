@@ -25,7 +25,10 @@ import org.testng.Assert;
 
 import atu.testng.reports.ATUReports;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.LogStatus;
 import com.weather.driver.Driver;
+import com.weather.driver.PropertyFile;
 /**
  * 
  * @author Naresh
@@ -37,16 +40,23 @@ public class SmokeTest_c334153_Verify_Lotame_onApp_Launch extends Driver {
 	@SuppressWarnings("deprecation")
 	public void Verify_Lotamecall_onapp_launch() throws InterruptedException, ParseException, IOException
 	{
+		LotameSteps=1;
+		ExtentReports reporter = Driver.getInstance();
+		logger = reporter.startTest("Verify Lotame call test case").assignCategory("Smoke_Test");
+		//reading filr from Propery file
+		 Driver.property();
+			PropertyFile.property();
 		System.out.println("Case Started");
 
-		ATUReports.add("Launching the app",false);
+		ATUReports.add("Launch the app",false);
+		logger.log(LogStatus.PASS, "Launch the app");
 		//run command for getting logs in idevicesyslog.log
-		String[] str ={"/bin/bash", "-c", "/usr/local/bin/idevicesyslog.log  >> /Users/aparna/Documents/syslog.log"};
+		String[] str ={"/bin/bash", "-c", "/usr/local/bin/idevicesyslog.log  >>" +properties.getProperty("LogFilePath")};
 		Process p = Runtime.getRuntime().exec(str);
 
 
-
-		BufferedReader r = new BufferedReader(new FileReader("/Users/aparna/Documents/syslog.log"));
+		LotameSteps=LotameSteps+1;
+		BufferedReader r = new BufferedReader(new FileReader(properties.getProperty("LogFilePath")));
 
 		String line = "";
 		String allLine = "";
@@ -58,7 +68,7 @@ public class SmokeTest_c334153_Verify_Lotame_onApp_Launch extends Driver {
 
 		}
 
-		String FilePath = "/Users/aparna/Documents/syslog.log";
+		String FilePath = properties.getProperty("LogFilePath");
 
 		Map<String, String> mapkeys = new HashMap<String, String>();
 
@@ -72,17 +82,14 @@ public class SmokeTest_c334153_Verify_Lotame_onApp_Launch extends Driver {
 			StringBuffer sb = new StringBuffer("");
 			while ((strLine = br.readLine()) != null) {
 
-				// parse strLine to obtain what you want /
-				//System.out.println (strLine);
 				sb.append(strLine);
 
 			}
-
+			LotameSteps=LotameSteps+1;
 			//				 for (int i=0; i<5)
-			ATUReports.add("Verifying the Lotame values(sg) in Feed_1 Call",false);
+			ATUReports.add("Verify the Lotame values(sg) in Feed_1 Call",false);
+			logger.log(LogStatus.PASS, "Verify the Lotame values(sg) in Feed_1 Call");
 			if(sb.toString().contains("Requesting ad: /7646/app_iphone_us/display/feed/feed_1")){
-				// System.out.println("index of first one ::::"+sb.toString().indexOf("Requesting ad: /7646/app_iphone_us/display/feed/feed_1 with parameters: {"));
-				//System.out.println("index of second one ::::"+sb.toString().indexOf("Oct  9 12:43:59 iPod TheWeather[686] <Warning>: Get"));
 				String req = sb.toString().substring( sb.toString().lastIndexOf("Requesting ad: /7646/app_iphone_us/display/feed/feed_1 with parameters: {"));
 				req = req.substring(req.indexOf("{")+1,req.indexOf("}"));
 				String[] arrays = req.split(";");
@@ -102,20 +109,29 @@ public class SmokeTest_c334153_Verify_Lotame_onApp_Launch extends Driver {
 					if(entryKeys.getKey().contains("sg"))
 					{
 						System.out.println("sg values are :" + entryKeys.getValue());
-						ATUReports.add("sg values are presented",false);
+						ATUReports.add("sg values are present",false);
+						logger.log(LogStatus.PASS, "sg values are present");
 					}
+					
 
 				}
-
+				
 			}
+			
+		
+			
 			br.close();
-
+			LotameSteps=0;
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-
-
+		
 		System.out.println("Verifyings Lotame test case done");
+		reporter.endTest(logger);
+		reporter.flush();
+
+		
 	}
 }

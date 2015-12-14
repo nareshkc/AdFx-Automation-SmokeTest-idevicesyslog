@@ -3,15 +3,19 @@ package com.weather.SmokeTestcases;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSElement;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import atu.testng.reports.ATUReports;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.LogStatus;
 import com.weather.driver.Driver;
 /**
  * 
@@ -21,39 +25,57 @@ import com.weather.driver.Driver;
 public class SmokeTest_c334147_Map extends Driver{
 
 	@SuppressWarnings("deprecation")
-	public void verify_adpresent_onextendedMap_page() throws InterruptedException
+	public void verify_adpresent_onextendedMap_page() throws InterruptedException, IOException
 	{
 		
-		ATUReports.add("Launching the app",false);
+		MapsSteps=1;
+		ExtentReports reporter = Driver.getInstance();
+		logger = reporter.startTest("Verify Maps extended page test case").assignCategory("Smoke_Test");
+		ATUReports.add("Launch the app",false);
+		logger.log(LogStatus.PASS, "Launch the app");
+		//Verify usr on main page
+		try{
+		if(Ad.findElementByName("navControl backArrow").isDisplayed())
+		{
+			Ad.findElementByName("navControl backArrow").click();
+		}
+		}catch(NoSuchElementException ex)
+		{
+			System.out.println("User on main page");
+		}
 		
-		//Thread.sleep(1000);
-		Ad.findElement(By.name("Back")).click();
-		
-		ATUReports.add("Scrolling to Maps Page",false);
-		IOSElement Map = (IOSElement) Ad.findElement(By.name("Maps"));
+		ATUReports.add("Scroll to Maps Page",false);
+		logger.log(LogStatus.PASS, "Scroll to Maps Page");
+		MapsSteps=MapsSteps+1;
+		System.out.println("searching for map");
+		MobileElement Map = (MobileElement) Ad.findElement(By.name("More"));
 		System.out.println("Element Name is ::" + "Maps Page");
-		for(int page =1 ; page<=2;page++)
+		for(int page =1 ; page<=8;page++)
 		{
 			
 			if(Map.isDisplayed())
 			{
-				if(!Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIACollectionView[1]/UIACollectionCell[8]/UIAButton[1]").isDisplayed())
+				MapsSteps=MapsSteps+1;
+				if(!Ad.findElementByName("map play").isDisplayed())
+						//Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIACollectionView[1]/UIACollectionCell[8]/UIAButton[1]").isDisplayed())
 				{
 				System.out.println("Map element is not present");
 				ATUReports.add("Map page is not present and scrolling again",false);
+				logger.log(LogStatus.PASS, "Map page is not present and scrolling again");
 				JavascriptExecutor js = (JavascriptExecutor) Ad ;
 				HashMap<String, String> scrollObject = new HashMap<String, String>();
 				scrollObject.put("direction", "down");
 				js.executeScript("mobile: scroll", scrollObject);
 				}
 				//Ad.findElementByName("map play").click();
-				System.out.println("Map page is displyaed and tapping on Map button");
+				System.out.println("Verify that Maps page is displayed and tap on Map button");
 				
-				ATUReports.add("Map page is displyaed and tapping on Map button",false);
-				
+				ATUReports.add("Verify that Maps page is displayed and tap on Map button",false);
+				logger.log(LogStatus.PASS, "Verify that Maps page is displayed and tap on Map button");
+				MapsSteps=MapsSteps+1;
 				//Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIACollectionView[1]/UIACollectionCell[8]/UIAButton[1]").click();
 				Ad.findElementByName("map play").click();
-				
+				MapsSteps=MapsSteps+1;
 				MobileElement AdEle =(MobileElement) Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]");
 
 				WebDriverWait wait = new WebDriverWait(Ad, 4);
@@ -63,11 +85,15 @@ public class SmokeTest_c334147_Map extends Driver{
 				{
 					System.out.println("Ad present on Extended Map page");
 					ATUReports.add("Ad present on Extended Map page",false);
+					logger.log(LogStatus.PASS, "Ad present on Extended Map page");
+					//Ad.findElement(By.name("navControl backArrow")).click();
+					//Thread.sleep(1000);
 					//System.out.println("Add size is :: " + Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]").getAttribute("size"));
 				}break;
 
 			}else
 			{
+				MapsSteps=MapsSteps+1;
 				System.out.println("Map element is not present");
 				JavascriptExecutor js = (JavascriptExecutor) Ad ;
 				HashMap<String, String> scrollObject = new HashMap<String, String>();
@@ -75,6 +101,9 @@ public class SmokeTest_c334147_Map extends Driver{
 				js.executeScript("mobile: scroll", scrollObject);
 			}
 		}
+		MapsSteps=0;
+		reporter.endTest(logger);
+		reporter.flush();
 	}
 
 }
