@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,11 +16,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import atu.testng.reports.ATUReports;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
+import com.weather.Genaral.Enter_Address;
 import com.weather.Genaral.app_Kill_Relaunch;
 import com.weather.driver.Driver;
 //import com.weather.excel.WriteResultintoExcel;
@@ -32,29 +35,32 @@ public class SmokeTest_C334146_Hourly extends Driver{
 
 	@SuppressWarnings("deprecation")
 	public void verify_adpresent_onextendedHourly_page() throws Exception{
-		
+
 		HourlySteps=1;
 		ExtentReports reporter = Driver.getInstance();
 		logger = reporter.startTest("Verify Hourly Extened page test case").assignCategory("Smoke_Test");
-	
+
 		//app kill and relaunch the app
-				app_Kill_Relaunch.Kill_realaunch();
-	
+		app_Kill_Relaunch.Kill_realaunch();
+
+		
+//		Enter_Address eaddress =new Enter_Address();
+//		eaddress.address();
 
 		ATUReports.add("Launch the app",false);
 		logger.log(LogStatus.PASS, "Launch the app");
 
 		ATUReports.add("Scroll to Hourly Page",false);
 		logger.log(LogStatus.PASS, "Scroll to Hourly Page");
-		
+
 		HourlySteps=HourlySteps+1;
-		
+
 		MobileElement el = (MobileElement) Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[1]/UIACollectionView[1]/UIACollectionCell[1]/UIAStaticText[2]");
 		el.click();
 		HourlySteps=HourlySteps+1;
 		System.out.println("Element Name is :: Hourly" );
 		MobileElement hrly = (MobileElement) Ad.findElement(By.name("PRECIP"));
-		
+
 		//WriteResultintoExcel wResult = new WriteResultintoExcel();
 		for(int page =1 ; page<=3;page++)
 		{
@@ -66,19 +72,38 @@ public class SmokeTest_C334146_Hourly extends Driver{
 				logger.log(LogStatus.PASS, "Verify that Hourly page is displayed and tap on 48 Hours button");
 				HourlySteps=HourlySteps+1;
 				Ad.findElementByName(" 48 Hours").click();
-				 
+
 				Boolean loaded = true;
 				HourlySteps=HourlySteps+1;
 				MobileElement AdEle =(MobileElement) Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]");
-						//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]");
+				//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIAWebView[1]");
 
-				
+
 				WebDriverWait wait = new WebDriverWait(Ad, 4);
 				wait.until(ExpectedConditions.visibilityOf(AdEle));
-			
+
+				int x = 320;
+				int y =50;
+				
 				if(AdEle.isDisplayed())
 				{
-					
+					Dimension ActualSize = AdEle.getSize();
+					System.out.println("Size of the ad is ::"+ActualSize);
+					System.out.println("Height  of the ad is ::"+ActualSize.getHeight());
+					System.out.println("Width of the ad is ::"+ActualSize.getWidth());
+					    if(ActualSize.getHeight() == y && ActualSize.getWidth()==x){
+					    
+					    	System.out.println("Ad present on Extended 10 Days page");
+					    	System.out.println("Ad sizes are matched");
+							ATUReports.add("Ad is displayed on Extended 10 Days page",false);
+							logger.log(LogStatus.PASS, "Ad is displayed on Extended 10 Days page");
+					    }else
+					    {
+					    	TendaysSteps=5+1;
+					    	System.out.println("Ad present but sizes are not matched");
+					    	Assert.fail();
+					    }
+
 					System.out.println("Ad is displayed on Extended Hourly page");
 
 					ATUReports.add("Ad is displayed on Extended Hourly page",false);

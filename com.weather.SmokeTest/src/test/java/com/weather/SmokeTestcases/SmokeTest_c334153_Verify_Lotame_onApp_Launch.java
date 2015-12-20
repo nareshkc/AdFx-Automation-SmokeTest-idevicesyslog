@@ -89,6 +89,14 @@ public class SmokeTest_c334153_Verify_Lotame_onApp_Launch extends Driver {
 			//				 for (int i=0; i<5)
 			ATUReports.add("Verify the Lotame values(sg) in Feed_1 Call",false);
 			logger.log(LogStatus.PASS, "Verify the Lotame values(sg) in Feed_1 Call");
+			
+			
+			if(!sb.toString().contains("Requesting ad: /7646/app_iphone_us/display/feed/feed_1"))
+			{
+				LotameSteps = 3+1;
+				System.out.println("Log data is not correct");
+				Assert.fail();
+			}
 			if(sb.toString().contains("Requesting ad: /7646/app_iphone_us/display/feed/feed_1")){
 				String req = sb.toString().substring( sb.toString().lastIndexOf("Requesting ad: /7646/app_iphone_us/display/feed/feed_1 with parameters: {"));
 				req = req.substring(req.indexOf("{")+1,req.indexOf("}"));

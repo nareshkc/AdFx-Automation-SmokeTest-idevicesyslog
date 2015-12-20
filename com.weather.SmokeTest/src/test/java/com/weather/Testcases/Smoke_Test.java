@@ -65,14 +65,14 @@ import com.weather.SmokeTestcases.SmokeTest_c334153_Verify_Lotame_onApp_Launch;
 public class Smoke_Test extends Driver{
 
 	{
-	System.setProperty("atu.reporter.config", "./atu.properties"); 
+		System.setProperty("atu.reporter.config", "./atu.properties"); 
 	}
-	
+
 	@SuppressWarnings("deprecation")
 	@Test 
 	public void FirstRun() throws ParseException, IOException, InterruptedException
 	{
-	
+
 
 		//Delete the log existed file
 		DeleteFile DF = new DeleteFile();
@@ -83,19 +83,19 @@ public class Smoke_Test extends Driver{
 		} else {
 			System.out.println("File not exist");
 		}
-				
+
 		//Install the app
-//          Install_the_app install=new Install_the_app();
-//          install.install();
-//          Thread.sleep(2000);
-		
-          Capabilities cap = new Capabilities();
+		          Install_the_app install=new Install_the_app();
+		          install.install();
+		          Thread.sleep(2000);
+
+		Capabilities cap = new Capabilities();
 		cap.dcap();
 		//ATUReports.add("Capabilities are set up and launching the app",false);
-		
-		
-			firstRun FR =new firstRun();
-			FR.first_Run();
+
+
+		firstRun FR =new firstRun();
+		FR.first_Run();
 	}
 
 
@@ -175,9 +175,9 @@ public class Smoke_Test extends Driver{
 		c334147.verify_adpresent_onextendedMap_page();
 
 	}
-	
-	
-	
+
+
+
 	//News Page ad	
 	@Test(priority=9, threadPoolSize = 1,invocationCount = 1)
 	public void c334148_Verify_adon_NewsExtended_page() throws Exception {
@@ -186,37 +186,37 @@ public class Smoke_Test extends Driver{
 		c334148.verify_adpresent_onextendedNews_page();
 
 	}
-	
+
 	//Health Page ad	
-		@Test(priority=10, threadPoolSize = 1,invocationCount = 1)
-		public void C402853_Verifybigbannerad_LSModules() throws Exception {
+	//		@Test(priority=10, threadPoolSize = 1,invocationCount = 1)
+	//		public void C402853_Verifybigbannerad_LSModules() throws Exception {
+	//
+	//			SmokeTest_C402853_Verifybigbannerad_LSModules C402853 = new SmokeTest_C402853_Verifybigbannerad_LSModules();
+	//			C402853.verify_adpresent_onLSModule_page();
+	//
+	//		}
+	//	
+	//	//Thirdparty Beacon
+	//	
+	//	@Test(priority=11, threadPoolSize = 1,invocationCount = 1)
+	//	public void C414339_Thirdparty_Beacon() throws Exception {
+	//
+	//		SmokeTest_C414339_Thirdparty_Beacon C414339 = new SmokeTest_C414339_Thirdparty_Beacon();
+	//		C414339.Thirdpart();
+	//
+	//	}
 
-			SmokeTest_C402853_Verifybigbannerad_LSModules C402853 = new SmokeTest_C402853_Verifybigbannerad_LSModules();
-			C402853.verify_adpresent_onLSModule_page();
 
-		}
-	
-	//Thirdparty Beacon
-	
-	@Test(priority=11, threadPoolSize = 1,invocationCount = 1)
-	public void C414339_Thirdparty_Beacon() throws Exception {
-
-		SmokeTest_C414339_Thirdparty_Beacon C414339 = new SmokeTest_C414339_Thirdparty_Beacon();
-		C414339.Thirdpart();
-
-	}
-	
-	
 
 
 	@SuppressWarnings("deprecation")
 	@BeforeClass
 	public void beforeClass() throws Exception {
 
-		
+
 		Driver.property();
 		PropertyFile.property();
-		
+
 		String	iOSVersion = properties.getProperty("platformVersion");
 
 		String deviceName = properties.getProperty("deviceName");
@@ -234,7 +234,7 @@ public class Smoke_Test extends Driver{
 
 		ATUReports.currentRunDescription = "<h1>Smoke Tests - Detailed Report with Pie Chart</h1>";
 		ATUReports.indexPageDescription = "<h1>iOS Smoke Test Report </h1> <br/> <h2> "+deviceName.toString() +" on iOS Version " +iOSVersion.toString()+ " with build : "+buildVersion.toString()+ "</h2>";
- 
+
 	}
 
 	@SuppressWarnings("deprecation")
@@ -282,6 +282,11 @@ public class Smoke_Test extends Driver{
 				logger.log(LogStatus.FAIL, "App not launched / Elements are not present");
 
 			}else if(c334150.PulltorefreshSteps==6)
+			{
+				//ATUReports.add("Branded background not found", true);
+				////ATUReports.add("Fail", LogAs.FAILED, new CaptureScreen(ScreenshotOf.DESKTOP));
+				logger.log(LogStatus.FAIL, "Log data is not correct please restart the device");
+			}else if(c334150.PulltorefreshSteps==7)
 			{
 				//ATUReports.add("Branded background not found", true);
 				////ATUReports.add("Fail", LogAs.FAILED, new CaptureScreen(ScreenshotOf.DESKTOP));
@@ -365,6 +370,11 @@ public class Smoke_Test extends Driver{
 				//ATUReports.add("App not launched / Elements are not present ", true);
 				logger.log(LogStatus.FAIL, "fgeo values are not matched");
 
+			}else if(c334145.FactSteps==5)
+			{
+				//ATUReports.add("App not launched / Elements are not present ", true);
+				logger.log(LogStatus.FAIL, "Log data is not correct please restart the device");
+
 			}
 
 
@@ -392,6 +402,11 @@ public class Smoke_Test extends Driver{
 				//ATUReports.add("App not launched / Elements are not present ", true);
 				logger.log(LogStatus.FAIL, "WFXTG values are not matched");
 
+			}else if(c334144.WFXSteps==5)
+			{
+				//ATUReports.add("App not launched / Elements are not present ", true);
+				logger.log(LogStatus.FAIL, "Log data is not correct please restart the device");
+
 			}
 
 
@@ -413,6 +428,11 @@ public class Smoke_Test extends Driver{
 			{
 				//ATUReports.add("App not launched / Elements are not present ", true);
 				logger.log(LogStatus.FAIL, "SG Values are not found");
+
+			}else if(c334153.LotameSteps==4)
+			{
+				//ATUReports.add("App not launched / Elements are not present ", true);
+				logger.log(LogStatus.FAIL, "Log data is not correct please restart the device");
 
 			}
 
@@ -456,6 +476,11 @@ public class Smoke_Test extends Driver{
 			{
 				//ATUReports.add("App not launched / Elements are not present ", true);
 				logger.log(LogStatus.FAIL, "Feed call is not present");
+
+			}else if(c334143.CleanSteps==8)
+			{
+				//ATUReports.add("App not launched / Elements are not present ", true);
+				logger.log(LogStatus.FAIL, "Log data is not correct please restart the device");
 
 			}
 
@@ -525,6 +550,11 @@ public class Smoke_Test extends Driver{
 				//ATUReports.add("App not launched / Elements are not present ", true);
 				logger.log(LogStatus.FAIL, "Scrolling not done");
 
+			}else if(c334151.TendaysSteps==6)
+			{
+				//ATUReports.add("App not launched / Elements are not present ", true);
+				logger.log(LogStatus.FAIL, "Ad sizes are not matched");
+
 			}
 
 
@@ -563,10 +593,10 @@ public class Smoke_Test extends Driver{
 				logger.log(LogStatus.FAIL, "Scrolling not done");
 
 			}
-			
-			
+
+
 			SmokeTest_C402853_Verifybigbannerad_LSModules C402853 = new SmokeTest_C402853_Verifybigbannerad_LSModules();
-			
+
 			System.out.println("Health page - Steps Value is ::"+C402853.HealthSteps);
 			if(C402853.HealthSteps==1)
 			{

@@ -85,6 +85,15 @@ public class SmokeTest_C334145_factualCall extends Driver {
 			ATUReports.add("Verify the Factual values(FAUD,FGEO) in Feed_1 Call",false);
 			logger.log(LogStatus.PASS, "Verify the Factual values(FAUD,FGEO) in Feed_1 Call");
 			//				 for (int i=0; i<5)
+			
+			
+			if(!sb.toString().contains("Requesting ad: /7646/app_iphone_us/display/feed/feed_1"))
+			{
+				FactSteps=4+1;
+				System.out.println("Log data is not correct");
+				Assert.fail();
+			}
+			
 			if(sb.toString().contains("Requesting ad: /7646/app_iphone_us/display/feed/feed_1")){
 				// System.out.println("index of first one ::::"+sb.toString().indexOf("Requesting ad: /7646/app_iphone_us/display/feed/feed_1 with parameters: {"));
 				//System.out.println("index of second one ::::"+sb.toString().indexOf("Oct  9 12:43:59 iPod TheWeather[686] <Warning>: Get"));

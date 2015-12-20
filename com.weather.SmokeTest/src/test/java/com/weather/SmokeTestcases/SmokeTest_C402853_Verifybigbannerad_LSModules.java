@@ -1,6 +1,7 @@
 package com.weather.SmokeTestcases;
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSElement;
 
 import java.io.BufferedReader;
@@ -31,8 +32,13 @@ public class SmokeTest_C402853_Verifybigbannerad_LSModules  extends Driver{
 		MoveTo_TestMode MTT = new MoveTo_TestMode();
 		MTT.testmode();
 
-//		String originalContext = Ad.getContext();
-//		Ad.context("NATIVE_APP");
+		String originalContext = Ad.getContext();
+		Ad.context("NATIVE_APP");
+
+		//Scroll object
+		JavascriptExecutor js = (JavascriptExecutor) Ad ;
+		HashMap<String, String> scrollObject = new HashMap<String, String>();
+		scrollObject.put("direction", "down");
 
 		HealthSteps=1;
 		ExtentReports reporter = Driver.getInstance();
@@ -105,18 +111,25 @@ public class SmokeTest_C402853_Verifybigbannerad_LSModules  extends Driver{
 							System.out.println("Spotlight ad not present on Allergies page");
 
 						}
-						}catch(NoSuchElementException e)
+					}catch(NoSuchElementException e)
 					{       HealthSteps=15;
 					System.out.println("Spotlight ad not present");
 					}
 					HealthSteps=4;
-					Thread.sleep(2000);
-					JavascriptExecutor js = (JavascriptExecutor) Ad ;
-					HashMap<String, String> scrollObject = new HashMap<String, String>();
-					scrollObject.put("direction", "down");
-					js.executeScript("mobile: scroll", scrollObject);
-					js.executeScript("mobile: scroll", scrollObject);
-		
+					Thread.sleep(5000);
+
+					//					js.executeScript("mobile: scroll", scrollObject);
+					//					js.executeScript("mobile: scroll", scrollObject);
+
+					MobileElement el = (MobileElement) Ad.findElementByName("Breathing Comfort Forecast");
+					//(MobileElement) Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[5]");
+					MobileElement el1 = (MobileElement) Ad.findElementByName("BREATHING");
+
+					TouchAction Act = new TouchAction(Ad);
+					Act.longPress(el).moveTo(el1).release().perform();
+					MobileElement el2 = (MobileElement) Ad.findElementByName("National Map");
+					Act.longPress(el2).moveTo(el1).release().perform();
+
 					HealthSteps=HealthSteps+1;
 					MobileElement AdEle =(MobileElement) Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[5]");
 
@@ -151,9 +164,9 @@ public class SmokeTest_C402853_Verifybigbannerad_LSModules  extends Driver{
 				if(Ad.findElementByName("COLD AND FLU").isDisplayed())
 				{
 
-					String[] str1 ={"/bin/bash", "-c", "/usr/local/bin/idevicesyslog  >>" +properties.getProperty("LogFilePath")};
-					Process p1 = Runtime.getRuntime().exec(str1);
-					Thread.sleep(5000);
+					//					String[] str1 ={"/bin/bash", "-c", "/usr/local/bin/idevicesyslog  >>" +properties.getProperty("LogFilePath")};
+					//					Process p1 = Runtime.getRuntime().exec(str1);
+					//					Thread.sleep(5000);
 
 					logger.log(LogStatus.PASS, "Found and Navigate Cold And Flu page");
 
@@ -181,12 +194,14 @@ public class SmokeTest_C402853_Verifybigbannerad_LSModules  extends Driver{
 					HealthSteps=7;
 
 
+					MobileElement el3 = (MobileElement) Ad.findElementByName("CDC Report");
+					//(MobileElement) Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[5]");
+					MobileElement el4 = (MobileElement) Ad.findElementByName("COLD AND FLU");
 
-//					JavascriptExecutor js = (JavascriptExecutor) Ad ;
-//					HashMap<String, String> scrollObject = new HashMap<String, String>();
-//					scrollObject.put("direction", "down");
-//					js.executeScript("mobile: scroll", scrollObject);
-					Scroll.scrolldown();
+					TouchAction Act = new TouchAction(Ad);
+					Act.longPress(el3).moveTo(el4).release().perform();	
+
+					//js.executeScript("mobile: scroll", scrollObject);
 					HealthSteps=HealthSteps+1;
 
 					MobileElement AdEle =(MobileElement) Ad.findElementByXPath("//UIAApplication[1]/UIAWindow[1]/UIACollectionView[1]/UIACollectionCell[4]");
@@ -213,12 +228,12 @@ public class SmokeTest_C402853_Verifybigbannerad_LSModules  extends Driver{
 			{
 
 				System.out.println("Health element is not present");
-				JavascriptExecutor js = (JavascriptExecutor) Ad ;
-				HashMap<String, String> scrollObject = new HashMap<String, String>();
-				scrollObject.put("direction", "down");
+
 				js.executeScript("mobile: scroll", scrollObject);
-			//	Scroll.scrolldown();
+				//Scroll.scrolldown();
+				
 			}
+
 		}
 		HealthSteps=0;
 		reporter.endTest(logger);

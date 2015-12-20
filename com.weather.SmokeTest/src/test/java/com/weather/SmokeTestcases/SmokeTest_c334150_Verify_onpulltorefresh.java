@@ -151,13 +151,13 @@ public class SmokeTest_c334150_Verify_onpulltorefresh extends Driver {
 			}
 
 			System.out.println("Sb is  ::"+sb.toString());
-			//			
-			//			if(sb.toString().equals("[connected]"))
-			//			{
-			//				PulltorefreshSteps=PulltorefreshSteps+1;
-			//				System.out.println("Log data is not correct");
-			//				Assert.fail();
-			//			}
+						
+						if(!sb.toString().contains("Network request : https://pubads.g.doubleclick.net/gampad/adx?iu=/7646/app_iphone_us/display/bb"))
+						{
+							PulltorefreshSteps=5+1;
+							System.out.println("Log data is not correct");
+							Assert.fail();
+						}
 
 			String req1 = sb.toString().substring( sb.toString().lastIndexOf("Network request : https://pubads.g.doubleclick.net/gampad/adx?iu=/7646/app_iphone_us/display/bb"));
 			String	req = req1.substring(req1.indexOf("&")+1,req1.indexOf("fltmpc"));

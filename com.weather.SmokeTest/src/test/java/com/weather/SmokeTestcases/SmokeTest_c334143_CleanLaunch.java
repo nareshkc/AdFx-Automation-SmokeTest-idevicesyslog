@@ -27,6 +27,7 @@ import atu.testng.reports.ATUReports;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
+import com.weather.Genaral.Enter_Address;
 import com.weather.Genaral.Scroll;
 import com.weather.Genaral.app_Kill_Relaunch;
 import com.weather.driver.Driver;
@@ -41,6 +42,9 @@ public class SmokeTest_c334143_CleanLaunch extends Driver{
 	@SuppressWarnings("deprecation")
 	public void verify_adcals_onclean_launch() throws Exception
 	{
+		
+		
+		
 		CleanSteps=1;
 		ExtentReports reporter = Driver.getInstance();
 		logger = reporter.startTest("Verify Clean launch test case").assignCategory("Smoke_Test");
@@ -50,6 +54,8 @@ public class SmokeTest_c334143_CleanLaunch extends Driver{
 		Driver.property();
 		PropertyFile.property();
 
+//		Enter_Address eaddress =new Enter_Address();
+//		eaddress.address();
 
 		//Scroll the app
 		//pageScrolling.Scroll();
@@ -135,6 +141,14 @@ public class SmokeTest_c334143_CleanLaunch extends Driver{
 
 				}
 
+				
+				if(!sb.toString().contains("Network request : https://pubads.g.doubleclick.net/gampad/adx?iu=/7646/app_iphone_us/display/bb"))
+				{
+					CleanSteps=7+1;
+					System.out.println("Log data is not correct");
+					Assert.fail();
+				}
+				
 				//verify Feed_0 Vlaues
 				if(FeedValue==0)
 				{

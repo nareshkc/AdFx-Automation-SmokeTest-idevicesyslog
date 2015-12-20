@@ -109,6 +109,15 @@ public class SmokeTest_c334144_Verify_WeatheFX_ApiCall extends Driver{
 				 ATUReports.add("Verify the WFXTG Values in feed_1 Call",false);
 				 logger.log(LogStatus.PASS, "Verify the WFXTG Values in feed_1 Call");
 //				 for (int i=0; i<5)
+				 
+				 if(!sb.toString().contains("Requesting ad: /7646/app_iphone_us/display/feed/feed_1"))
+					{
+					 WFXSteps = 4+1;
+						System.out.println("Log data is not correct");
+						Assert.fail();
+					}
+				 
+				 
 				 if(sb.toString().contains("Requesting ad: /7646/app_iphone_us/display/feed/feed_1")){
 					// System.out.println("index of first one ::::"+sb.toString().indexOf("Requesting ad: /7646/app_iphone_us/display/feed/feed_1 with parameters: {"));
 					 //System.out.println("index of second one ::::"+sb.toString().indexOf("Oct  9 12:43:59 iPod TheWeather[686] <Warning>: Get"));
