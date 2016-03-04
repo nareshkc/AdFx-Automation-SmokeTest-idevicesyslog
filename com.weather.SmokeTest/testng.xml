@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TWC_Smoke_Suite" parallel="none">
+  <test name="TWC_Smoke_Test">
+    <classes>
+     <!--  <class name="com.weather.Testcases.Smoke_Test"/> -->
+      <class name="com.weather.RunTest.Smoke_Test"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Default_suite">
+              <span class="suite-name border-failed">Default suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
+                    <span>testng-customsuite.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">11 methods, 1 failed,   10 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="C402853_Verifybigbannerad_LSModules">C402853_Verifybigbannerad_LSModules</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="FirstRun">FirstRun</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334143_verify_adcals_on_clean_launch">c334143_verify_adcals_on_clean_launch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334144_verify_WeatheFX_ApiCall">c334144_verify_WeatheFX_ApiCall</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334145_factualCall_onfreshlaunch">c334145_factualCall_onfreshlaunch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334146_Verify_adon_HourlyExtended_page">c334146_Verify_adon_HourlyExtended_page</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334147_Verify_adon_MapsExtended_page">c334147_Verify_adon_MapsExtended_page</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334148_Verify_adon_NewsExtended_page">c334148_Verify_adon_NewsExtended_page</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334150_pulltoRefresh">c334150_pulltoRefresh</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334151_Verify_adon_10DaysExtended_page">c334151_Verify_adon_10DaysExtended_page</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334153_lotame_call_verify">c334153_lotame_call_verify</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Default_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.weather.RunTest.Smoke_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="C402853_Verifybigbannerad_LSModules">
+                  </a> <!-- C402853_Verifybigbannerad_LSModules -->
+                  <span class="method-name">C402853_Verifybigbannerad_LSModules</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 61.32 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.47.1&apos;, revision: &apos;unknown&apos;, time: &apos;2015-07-30 11:02:44&apos;
+System info: host: &apos;localhost&apos;, ip: &apos;127.0.0.1&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.1&apos;, java.version: &apos;1.8.0_60&apos;
+Driver info: io.appium.java_client.ios.IOSDriver
+Capabilities [{appPackage=com.weather.Weather, networkConnectionEnabled=false, warnings={}, bundleId=com.weather.TWC, databaseEnabled=false, deviceName==iPod (8.4) [707cc1d9c294b37fe5e70b7584163a100ae6166f], platform=MAC, appActivity=com.weather.Weather.app.SplashScreenActivity, desired={appPackage=com.weather.Weather, appActivity=com.weather.Weather.app.SplashScreenActivity, newCommandTimeout=100000, platformVersion=8.4, bundleId=com.weather.TWC, browserName=iOS, platformName=iOS, device=iPhone, deviceName==iPod (8.4) [707cc1d9c294b37fe5e70b7584163a100ae6166f], platform=MAC, autoAcceptAlerts=true}, newCommandTimeout=100000, platformVersion=8.4, webStorageEnabled=false, locationContextEnabled=false, browserName=iOS, takesScreenshot=true, javascriptEnabled=true, platformName=iOS, device=iPhone, autoAcceptAlerts=true}]
+Session ID: 7b294025-3b39-461f-af67-95423df3273b
+*** Element info: {Using=class name, value=UIASearchBar}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.ios.IOSDriver.execute(IOSDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByClassName(RemoteWebDriver.java:429)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByClassName(DefaultGenericMobileDriver.java:110)
+	at io.appium.java_client.AppiumDriver.findElementByClassName(AppiumDriver.java:1)
+	at io.appium.java_client.ios.IOSDriver.findElementByClassName(IOSDriver.java:1)
+	at com.weather.Genaral.MoveTo_TestMode.testmode(MoveTo_TestMode.java:55)
+	at com.weather.SmokeTestcases.SmokeTest_C402853_Verifybigbannerad_LSModules.verify_adpresent_onLSModule_page(SmokeTest_C402853_Verifybigbannerad_LSModules.java:33)
+	at com.weather.RunTest.Smoke_Test.C402853_Verifybigbannerad_LSModules(Smoke_Test.java:208)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:659)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:845)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1153)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1199)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1124)
+	at org.testng.TestNG.run(TestNG.java:1032)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.weather.RunTest.Smoke_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="FirstRun">
+                  </a> <!-- FirstRun -->
+                  <span class="method-name">FirstRun</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334143_verify_adcals_on_clean_launch">
+                  </a> <!-- c334143_verify_adcals_on_clean_launch -->
+                  <span class="method-name">c334143_verify_adcals_on_clean_launch</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334144_verify_WeatheFX_ApiCall">
+                  </a> <!-- c334144_verify_WeatheFX_ApiCall -->
+                  <span class="method-name">c334144_verify_WeatheFX_ApiCall</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334145_factualCall_onfreshlaunch">
+                  </a> <!-- c334145_factualCall_onfreshlaunch -->
+                  <span class="method-name">c334145_factualCall_onfreshlaunch</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334146_Verify_adon_HourlyExtended_page">
+                  </a> <!-- c334146_Verify_adon_HourlyExtended_page -->
+                  <span class="method-name">c334146_Verify_adon_HourlyExtended_page</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334147_Verify_adon_MapsExtended_page">
+                  </a> <!-- c334147_Verify_adon_MapsExtended_page -->
+                  <span class="method-name">c334147_Verify_adon_MapsExtended_page</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334148_Verify_adon_NewsExtended_page">
+                  </a> <!-- c334148_Verify_adon_NewsExtended_page -->
+                  <span class="method-name">c334148_Verify_adon_NewsExtended_page</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334150_pulltoRefresh">
+                  </a> <!-- c334150_pulltoRefresh -->
+                  <span class="method-name">c334150_pulltoRefresh</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334151_Verify_adon_10DaysExtended_page">
+                  </a> <!-- c334151_Verify_adon_10DaysExtended_page -->
+                  <span class="method-name">c334151_Verify_adon_10DaysExtended_page</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334153_lotame_call_verify">
+                  </a> <!-- c334153_lotame_call_verify -->
+                  <span class="method-name">c334153_lotame_call_verify</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+        </div> <!-- panel Default_suite -->
+        <div panel-name="test-xml-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">/private/var/folders/9m/t18vys0x1c150q9sd2wb0hg16l853g/T/testng-eclipse-743753460/testng-customsuite.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot;&gt;
+  &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.weather.RunTest.Smoke_Test&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Default test --&gt;
+&lt;/suite&gt; &lt;!-- Default suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Default test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Default_suite');
+function tableData_Default_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(11);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'C402853_Verifybigbannerad_LSModules')
+data.setCell(0, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(0, 3, 211488);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'c334148_Verify_adon_NewsExtended_page')
+data.setCell(1, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(1, 3, 199486);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'FirstRun')
+data.setCell(2, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(2, 3, 190476);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'c334143_verify_adcals_on_clean_launch')
+data.setCell(3, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(3, 3, 100618);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'c334146_Verify_adon_HourlyExtended_page')
+data.setCell(4, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(4, 3, 57299);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'c334147_Verify_adon_MapsExtended_page')
+data.setCell(5, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(5, 3, 41770);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'c334150_pulltoRefresh')
+data.setCell(6, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(6, 3, 28613);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'c334151_Verify_adon_10DaysExtended_page')
+data.setCell(7, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(7, 3, 27906);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'c334144_verify_WeatheFX_ApiCall')
+data.setCell(8, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(8, 3, 13695);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'c334153_lotame_call_verify')
+data.setCell(9, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(9, 3, 194);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'c334145_factualCall_onfreshlaunch')
+data.setCell(10, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(10, 3, 124);
+window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 14 minutes</span>
+              <div id="times-div-Default_suite">
+              </div> <!-- times-div-Default_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">c334147_Verify_adon_MapsExtended_page</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">STEP32</span>
+                <span class="reporter-method-output">STEP33</span>
+                <span class="reporter-method-output">STEP34</span>
+                <span class="reporter-method-output">STEP35</span>
+                <span class="reporter-method-output">STEP36</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">c334150_pulltoRefresh</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">STEP5</span>
+                <span class="reporter-method-output">STEP6</span>
+                <span class="reporter-method-output">STEP7</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">FirstRun</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">STEP2</span>
+                <span class="reporter-method-output">STEP3</span>
+                <span class="reporter-method-output">STEP4</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">c334143_verify_adcals_on_clean_launch</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">STEP15</span>
+                <span class="reporter-method-output">STEP16</span>
+                <span class="reporter-method-output">STEP17</span>
+                <span class="reporter-method-output">STEP18</span>
+                <span class="reporter-method-output">STEP19</span>
+                <span class="reporter-method-output">STEP20</span>
+                <span class="reporter-method-output">STEP21</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">c334144_verify_WeatheFX_ApiCall</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">STEP11</span>
+                <span class="reporter-method-output">STEP12</span>
+                <span class="reporter-method-output">STEP13</span>
+                <span class="reporter-method-output">STEP14</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">c334145_factualCall_onfreshlaunch</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">STEP8</span>
+                <span class="reporter-method-output">STEP9</span>
+                <span class="reporter-method-output">STEP10</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">c334146_Verify_adon_HourlyExtended_page</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">STEP22</span>
+                <span class="reporter-method-output">STEP23</span>
+                <span class="reporter-method-output">STEP24</span>
+                <span class="reporter-method-output">STEP25</span>
+                <span class="reporter-method-output">STEP26</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">c334148_Verify_adon_NewsExtended_page</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">STEP37</span>
+                <span class="reporter-method-output">STEP38</span>
+                <span class="reporter-method-output">STEP39</span>
+                <span class="reporter-method-output">STEP40</span>
+                <span class="reporter-method-output">STEP41</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">c334151_Verify_adon_10DaysExtended_page</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">STEP27</span>
+                <span class="reporter-method-output">STEP28</span>
+                <span class="reporter-method-output">STEP29</span>
+                <span class="reporter-method-output">STEP30</span>
+                <span class="reporter-method-output">STEP31</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">C402853_Verifybigbannerad_LSModules</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">STEP42</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.weather.RunTest.Smoke_Test</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">beforeTest</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">17 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">FirstRun</span>
+                <span class="method-start">30 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=FirstRun status=SUCCESS method=Smoke_Test.FirstRun()[pri:0, instance:com.weather.Ru...)</span>
+                <span class="method-start">190507 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">c334150_pulltoRefresh</span>
+                <span class="method-start">190509 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334150_pulltoRefresh status=SUCCESS method=Smoke_Test.c334150_pulltoRefresh()[pri:...)</span>
+                <span class="method-start">219123 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">c334145_factualCall_onfreshlaunch</span>
+                <span class="method-start">219123 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334145_factualCall_onfreshlaunch status=SUCCESS method=Smoke_Test.c334145_factualC...)</span>
+                <span class="method-start">219248 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">c334144_verify_WeatheFX_ApiCall</span>
+                <span class="method-start">219249 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334144_verify_WeatheFX_ApiCall status=SUCCESS method=Smoke_Test.c334144_verify_Wea...)</span>
+                <span class="method-start">232973 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">c334153_lotame_call_verify</span>
+                <span class="method-start">232974 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334153_lotame_call_verify status=SUCCESS method=Smoke_Test.c334153_lotame_call_ver...)</span>
+                <span class="method-start">233169 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">c334143_verify_adcals_on_clean_launch</span>
+                <span class="method-start">233169 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334143_verify_adcals_on_clean_launch status=SUCCESS method=Smoke_Test.c334143_veri...)</span>
+                <span class="method-start">333788 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">c334146_Verify_adon_HourlyExtended_page</span>
+                <span class="method-start">333789 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334146_Verify_adon_HourlyExtended_page status=SUCCESS method=Smoke_Test.c334146_Ve...)</span>
+                <span class="method-start">391089 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">c334151_Verify_adon_10DaysExtended_page</span>
+                <span class="method-start">391090 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334151_Verify_adon_10DaysExtended_page status=SUCCESS method=Smoke_Test.c334151_Ve...)</span>
+                <span class="method-start">418996 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">c334147_Verify_adon_MapsExtended_page</span>
+                <span class="method-start">418997 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334147_Verify_adon_MapsExtended_page status=SUCCESS method=Smoke_Test.c334147_Veri...)</span>
+                <span class="method-start">460768 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">c334148_Verify_adon_NewsExtended_page</span>
+                <span class="method-start">460768 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334148_Verify_adon_NewsExtended_page status=SUCCESS method=Smoke_Test.c334148_Veri...)</span>
+                <span class="method-start">660254 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">C402853_Verifybigbannerad_LSModules</span>
+                <span class="method-start">660255 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=C402853_Verifybigbannerad_LSModules status=FAILURE method=Smoke_Test.C402853_Verify...)</span>
+                <span class="method-start">871786 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-test after">
+                <span class="method-name">afterTest</span>
+                <span class="method-start">871823 ms</span>
+              </div> <!-- configuration-test after -->
+              <div class="configuration-suite after">
+                <span class="method-name">movefiles</span>
+                <span class="method-start">871893 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

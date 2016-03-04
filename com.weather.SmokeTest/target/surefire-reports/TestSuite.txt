@@ -1,0 +1,64 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 12, Failures: 10, Errors: 0, Skipped: 0, Time elapsed: 6.889 sec <<< FAILURE!
+FirstRun(com.weather.RunTest.Smoke_Test)  Time elapsed: 3.54 sec  <<< FAILURE!
+java.io.FileNotFoundException: /Users/aparna/Documents/Naresh/com.weather.SmokeTest/Files/syslog.log (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at java.io.FileReader.<init>(FileReader.java:58)
+	at com.weather.appium.Install_the_app.install(Install_the_app.java:22)
+	at com.weather.RunTest.Smoke_Test.FirstRun(Smoke_Test.java:91)
+
+c334150_pulltoRefresh(com.weather.RunTest.Smoke_Test)  Time elapsed: 0.264 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.weather.SmokeTestcases.SmokeTest_c334150_Verify_onpulltorefresh.Verify_PulltoRefresh(SmokeTest_c334150_Verify_onpulltorefresh.java:62)
+	at com.weather.RunTest.Smoke_Test.c334150_pulltoRefresh(Smoke_Test.java:115)
+
+c334144_verify_WeatheFX_ApiCall(com.weather.RunTest.Smoke_Test)  Time elapsed: 0.002 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.weather.SmokeTestcases.SmokeTest_c334144_Verify_WeatheFX_ApiCall.Verify_WeatherFX_Apicall(SmokeTest_c334144_Verify_WeatheFX_ApiCall.java:64)
+	at com.weather.RunTest.Smoke_Test.c334144_verify_WeatheFX_ApiCall(Smoke_Test.java:143)
+
+c334153_lotame_call_verify(com.weather.RunTest.Smoke_Test)  Time elapsed: 0.025 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.fail(Assert.java:101)
+	at com.weather.SmokeTestcases.SmokeTest_c334153_Verify_Lotame_onApp_Launch.Verify_Lotamecall_onapp_launch(SmokeTest_c334153_Verify_Lotame_onApp_Launch.java:98)
+	at com.weather.RunTest.Smoke_Test.c334153_lotame_call_verify(Smoke_Test.java:154)
+
+c334143_verify_adcals_on_clean_launch(com.weather.RunTest.Smoke_Test)  Time elapsed: 0.011 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.weather.Genaral.app_Kill_Relaunch.Kill_realaunch(app_Kill_Relaunch.java:11)
+	at com.weather.SmokeTestcases.SmokeTest_c334143_CleanLaunch.verify_adcals_onclean_launch(SmokeTest_c334143_CleanLaunch.java:52)
+	at com.weather.RunTest.Smoke_Test.c334143_verify_adcals_on_clean_launch(Smoke_Test.java:167)
+
+c334146_Verify_adon_HourlyExtended_page(com.weather.RunTest.Smoke_Test)  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.weather.Genaral.app_Kill_Relaunch.Kill_realaunch(app_Kill_Relaunch.java:11)
+	at com.weather.SmokeTestcases.SmokeTest_C334146_Hourly.verify_adpresent_onextendedHourly_page(SmokeTest_C334146_Hourly.java:44)
+	at com.weather.RunTest.Smoke_Test.c334146_Verify_adon_HourlyExtended_page(Smoke_Test.java:174)
+
+c334151_Verify_adon_10DaysExtended_page(com.weather.RunTest.Smoke_Test)  Time elapsed: 0.002 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.weather.SmokeTestcases.SmokeTest_C334151_10Days.verify_adpresent_onextendedTendays_page(SmokeTest_C334151_10Days.java:36)
+	at com.weather.RunTest.Smoke_Test.c334151_Verify_adon_10DaysExtended_page(Smoke_Test.java:183)
+
+c334147_Verify_adon_MapsExtended_page(com.weather.RunTest.Smoke_Test)  Time elapsed: 0.003 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.weather.SmokeTestcases.SmokeTest_c334147_Map.verify_adpresent_onextendedMap_page(SmokeTest_c334147_Map.java:40)
+	at com.weather.RunTest.Smoke_Test.c334147_Verify_adon_MapsExtended_page(Smoke_Test.java:191)
+
+c334148_Verify_adon_NewsExtended_page(com.weather.RunTest.Smoke_Test)  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.weather.SmokeTestcases.SmokeTest_C334148_News.verify_adpresent_onextendedNews_page(SmokeTest_C334148_News.java:35)
+	at com.weather.RunTest.Smoke_Test.c334148_Verify_adon_NewsExtended_page(Smoke_Test.java:202)
+
+C402853_Verifybigbannerad_LSModules(com.weather.RunTest.Smoke_Test)  Time elapsed: 0.012 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.weather.Genaral.MoveTo_TestMode.testmode(MoveTo_TestMode.java:18)
+	at com.weather.SmokeTestcases.SmokeTest_C402853_Verifybigbannerad_LSModules.verify_adpresent_onLSModule_page(SmokeTest_C402853_Verifybigbannerad_LSModules.java:33)
+	at com.weather.RunTest.Smoke_Test.C402853_Verifybigbannerad_LSModules(Smoke_Test.java:211)
+

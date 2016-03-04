@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="12" failures="10" name="TestSuite" time="6.814" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.60-b23"/>
+    <property name="user.country.format" value="IN"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/aparna/Documents/Naresh/com.weather.SmokeTest"/>
+    <property name="java.runtime.version" value="1.8.0_60-b27"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="basedir" value="/Users/aparna/Documents/Naresh/com.weather.SmokeTest"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="surefire.real.class.path" value="/var/folders/9m/t18vys0x1c150q9sd2wb0hg16l853g/T/surefirebooter1736418424842403227.jar"/>
+    <property name="java.io.tmpdir" value="/var/folders/9m/t18vys0x1c150q9sd2wb0hg16l853g/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/aparna/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="surefire.test.class.path" value="/Users/aparna/Documents/Naresh/com.weather.SmokeTest/target/test-classes:/Users/aparna/Documents/Naresh/com.weather.SmokeTest/target/classes:/Users/aparna/.m2/repository/com/relevantcodes/extentreports/2.10/extentreports-2.10.jar:/Users/aparna/.m2/repository/org/jsoup/jsoup/1.8.3/jsoup-1.8.3.jar:/Users/aparna/.m2/repository/org/xerial/sqlite-jdbc/3.8.11.1/sqlite-jdbc-3.8.11.1.jar:/Users/aparna/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/Users/aparna/.m2/repository/org/testng/testng/6.9.4/testng-6.9.4.jar:/Users/aparna/.m2/repository/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar:/Users/aparna/.m2/repository/com/beust/jcommander/1.48/jcommander-1.48.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-server/2.47.1/selenium-server-2.47.1.jar:/Users/aparna/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48.jar:/Users/aparna/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.48/bcpkix-jdk15on-1.48.jar:/Users/aparna/.m2/repository/mx4j/mx4j-tools/3.0.1/mx4j-tools-3.0.1.jar:/Users/aparna/.m2/repository/org/mortbay/jetty/servlet-api-2.5/6.1.9/servlet-api-2.5-6.1.9.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/jetty-repacked/7.6.1/jetty-repacked-7.6.1.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/jetty-rc-repacked/5/jetty-rc-repacked-5.jar:/Users/aparna/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar:/Users/aparna/.m2/repository/org/yaml/snakeyaml/1.8/snakeyaml-1.8.jar:/Users/aparna/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-java/2.47.1/selenium-java-2.47.1.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/2.47.1/selenium-chrome-driver-2.47.1.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/2.47.1/selenium-remote-driver-2.47.1.jar:/Users/aparna/.m2/repository/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-api/2.47.1/selenium-api-2.47.1.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/2.47.1/selenium-edge-driver-2.47.1.jar:/Users/aparna/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/Users/aparna/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-htmlunit-driver/2.47.1/selenium-htmlunit-driver-2.47.1.jar:/Users/aparna/.m2/repository/net/sourceforge/htmlunit/htmlunit/2.17/htmlunit-2.17.jar:/Users/aparna/.m2/repository/xalan/xalan/2.7.2/xalan-2.7.2.jar:/Users/aparna/.m2/repository/xalan/serializer/2.7.2/serializer-2.7.2.jar:/Users/aparna/.m2/repository/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar:/Users/aparna/.m2/repository/org/apache/httpcomponents/httpmime/4.4.1/httpmime-4.4.1.jar:/Users/aparna/.m2/repository/net/sourceforge/htmlunit/htmlunit-core-js/2.17/htmlunit-core-js-2.17.jar:/Users/aparna/.m2/repository/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.jar:/Users/aparna/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar:/Users/aparna/.m2/repository/net/sourceforge/nekohtml/nekohtml/1.9.22/nekohtml-1.9.22.jar:/Users/aparna/.m2/repository/net/sourceforge/cssparser/cssparser/0.9.16/cssparser-0.9.16.jar:/Users/aparna/.m2/repository/org/w3c/css/sac/1.3/sac-1.3.jar:/Users/aparna/.m2/repository/org/eclipse/jetty/websocket/websocket-client/9.2.11.v20150529/websocket-client-9.2.11.v20150529.jar:/Users/aparna/.m2/repository/org/eclipse/jetty/jetty-util/9.2.11.v20150529/jetty-util-9.2.11.v20150529.jar:/Users/aparna/.m2/repository/org/eclipse/jetty/jetty-io/9.2.11.v20150529/jetty-io-9.2.11.v20150529.jar:/Users/aparna/.m2/repository/org/eclipse/jetty/websocket/websocket-common/9.2.11.v20150529/websocket-common-9.2.11.v20150529.jar:/Users/aparna/.m2/repository/org/eclipse/jetty/websocket/websocket-api/9.2.11.v20150529/websocket-api-9.2.11.v20150529.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/2.47.1/selenium-firefox-driver-2.47.1.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/2.47.1/selenium-ie-driver-2.47.1.jar:/Users/aparna/.m2/repository/net/java/dev/jna/jna/4.1.0/jna-4.1.0.jar:/Users/aparna/.m2/repository/net/java/dev/jna/jna-platform/4.1.0/jna-platform-4.1.0.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/2.47.1/selenium-safari-driver-2.47.1.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-support/2.47.1/selenium-support-2.47.1.jar:/Users/aparna/.m2/repository/org/webbitserver/webbit/0.4.14/webbit-0.4.14.jar:/Users/aparna/.m2/repository/io/netty/netty/3.5.2.Final/netty-3.5.2.Final.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-leg-rc/2.47.1/selenium-leg-rc-2.47.1.jar:/Users/aparna/.m2/repository/io/appium/java-client/3.2.0/java-client-3.2.0.jar:/Users/aparna/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar:/Users/aparna/.m2/repository/org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.jar:/Users/aparna/.m2/repository/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar:/Users/aparna/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/aparna/.m2/repository/com/google/guava/guava/17.0/guava-17.0.jar:/Users/aparna/.m2/repository/cglib/cglib/3.1/cglib-3.1.jar:/Users/aparna/.m2/repository/org/ow2/asm/asm/4.2/asm-4.2.jar:/Users/aparna/.m2/repository/commons-validator/commons-validator/1.4.1/commons-validator-1.4.1.jar:/Users/aparna/.m2/repository/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar:/Users/aparna/.m2/repository/commons-digester/commons-digester/1.8.1/commons-digester-1.8.1.jar:/Users/aparna/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/Users/aparna/.m2/repository/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar:/Users/aparna/.m2/repository/org/apache/poi/poi/3.9/poi-3.9.jar:/Users/aparna/.m2/repository/atu/reporter/atureports/5.5/atureports-5.5.jar:/Users/aparna/.m2/repository/atu/testrecorder/testrecorder/2.1/testrecorder-2.1.jar:"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.11.1"/>
+    <property name="user.home" value="/Users/aparna"/>
+    <property name="user.timezone" value="Asia/Kolkata"/>
+    <property name="atu.reporter.config" value="./atu.properties"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="aparna"/>
+    <property name="java.class.path" value="/Users/aparna/Documents/Naresh/com.weather.SmokeTest/target/test-classes:/Users/aparna/Documents/Naresh/com.weather.SmokeTest/target/classes:/Users/aparna/.m2/repository/com/relevantcodes/extentreports/2.10/extentreports-2.10.jar:/Users/aparna/.m2/repository/org/jsoup/jsoup/1.8.3/jsoup-1.8.3.jar:/Users/aparna/.m2/repository/org/xerial/sqlite-jdbc/3.8.11.1/sqlite-jdbc-3.8.11.1.jar:/Users/aparna/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/Users/aparna/.m2/repository/org/testng/testng/6.9.4/testng-6.9.4.jar:/Users/aparna/.m2/repository/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar:/Users/aparna/.m2/repository/com/beust/jcommander/1.48/jcommander-1.48.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-server/2.47.1/selenium-server-2.47.1.jar:/Users/aparna/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48.jar:/Users/aparna/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.48/bcpkix-jdk15on-1.48.jar:/Users/aparna/.m2/repository/mx4j/mx4j-tools/3.0.1/mx4j-tools-3.0.1.jar:/Users/aparna/.m2/repository/org/mortbay/jetty/servlet-api-2.5/6.1.9/servlet-api-2.5-6.1.9.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/jetty-repacked/7.6.1/jetty-repacked-7.6.1.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/jetty-rc-repacked/5/jetty-rc-repacked-5.jar:/Users/aparna/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar:/Users/aparna/.m2/repository/org/yaml/snakeyaml/1.8/snakeyaml-1.8.jar:/Users/aparna/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-java/2.47.1/selenium-java-2.47.1.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/2.47.1/selenium-chrome-driver-2.47.1.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/2.47.1/selenium-remote-driver-2.47.1.jar:/Users/aparna/.m2/repository/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-api/2.47.1/selenium-api-2.47.1.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/2.47.1/selenium-edge-driver-2.47.1.jar:/Users/aparna/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/Users/aparna/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-htmlunit-driver/2.47.1/selenium-htmlunit-driver-2.47.1.jar:/Users/aparna/.m2/repository/net/sourceforge/htmlunit/htmlunit/2.17/htmlunit-2.17.jar:/Users/aparna/.m2/repository/xalan/xalan/2.7.2/xalan-2.7.2.jar:/Users/aparna/.m2/repository/xalan/serializer/2.7.2/serializer-2.7.2.jar:/Users/aparna/.m2/repository/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar:/Users/aparna/.m2/repository/org/apache/httpcomponents/httpmime/4.4.1/httpmime-4.4.1.jar:/Users/aparna/.m2/repository/net/sourceforge/htmlunit/htmlunit-core-js/2.17/htmlunit-core-js-2.17.jar:/Users/aparna/.m2/repository/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.jar:/Users/aparna/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar:/Users/aparna/.m2/repository/net/sourceforge/nekohtml/nekohtml/1.9.22/nekohtml-1.9.22.jar:/Users/aparna/.m2/repository/net/sourceforge/cssparser/cssparser/0.9.16/cssparser-0.9.16.jar:/Users/aparna/.m2/repository/org/w3c/css/sac/1.3/sac-1.3.jar:/Users/aparna/.m2/repository/org/eclipse/jetty/websocket/websocket-client/9.2.11.v20150529/websocket-client-9.2.11.v20150529.jar:/Users/aparna/.m2/repository/org/eclipse/jetty/jetty-util/9.2.11.v20150529/jetty-util-9.2.11.v20150529.jar:/Users/aparna/.m2/repository/org/eclipse/jetty/jetty-io/9.2.11.v20150529/jetty-io-9.2.11.v20150529.jar:/Users/aparna/.m2/repository/org/eclipse/jetty/websocket/websocket-common/9.2.11.v20150529/websocket-common-9.2.11.v20150529.jar:/Users/aparna/.m2/repository/org/eclipse/jetty/websocket/websocket-api/9.2.11.v20150529/websocket-api-9.2.11.v20150529.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/2.47.1/selenium-firefox-driver-2.47.1.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/2.47.1/selenium-ie-driver-2.47.1.jar:/Users/aparna/.m2/repository/net/java/dev/jna/jna/4.1.0/jna-4.1.0.jar:/Users/aparna/.m2/repository/net/java/dev/jna/jna-platform/4.1.0/jna-platform-4.1.0.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/2.47.1/selenium-safari-driver-2.47.1.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-support/2.47.1/selenium-support-2.47.1.jar:/Users/aparna/.m2/repository/org/webbitserver/webbit/0.4.14/webbit-0.4.14.jar:/Users/aparna/.m2/repository/io/netty/netty/3.5.2.Final/netty-3.5.2.Final.jar:/Users/aparna/.m2/repository/org/seleniumhq/selenium/selenium-leg-rc/2.47.1/selenium-leg-rc-2.47.1.jar:/Users/aparna/.m2/repository/io/appium/java-client/3.2.0/java-client-3.2.0.jar:/Users/aparna/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar:/Users/aparna/.m2/repository/org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.jar:/Users/aparna/.m2/repository/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar:/Users/aparna/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/aparna/.m2/repository/com/google/guava/guava/17.0/guava-17.0.jar:/Users/aparna/.m2/repository/cglib/cglib/3.1/cglib-3.1.jar:/Users/aparna/.m2/repository/org/ow2/asm/asm/4.2/asm-4.2.jar:/Users/aparna/.m2/repository/commons-validator/commons-validator/1.4.1/commons-validator-1.4.1.jar:/Users/aparna/.m2/repository/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar:/Users/aparna/.m2/repository/commons-digester/commons-digester/1.8.1/commons-digester-1.8.1.jar:/Users/aparna/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/Users/aparna/.m2/repository/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar:/Users/aparna/.m2/repository/org/apache/poi/poi/3.9/poi-3.9.jar:/Users/aparna/.m2/repository/atu/reporter/atureports/5.5/atureports-5.5.jar:/Users/aparna/.m2/repository/atu/testrecorder/testrecorder/2.1/testrecorder-2.1.jar:"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="/var/folders/9m/t18vys0x1c150q9sd2wb0hg16l853g/T/surefirebooter1736418424842403227.jar /var/folders/9m/t18vys0x1c150q9sd2wb0hg16l853g/T/surefire3472445028040412310tmp /var/folders/9m/t18vys0x1c150q9sd2wb0hg16l853g/T/surefire3900065805220628588tmp"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_60"/>
+    <property name="java.ext.dirs" value="/Users/aparna/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="localRepository" value="/Users/aparna/.m2/repository"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="com.weather.RunTest.Smoke_Test" name="FirstRun" time="3.476">
+    <failure message="/Users/aparna/Documents/Naresh/com.weather.SmokeTest/Files/syslog.log (No such file or directory)" type="java.io.FileNotFoundException">java.io.FileNotFoundException: /Users/aparna/Documents/Naresh/com.weather.SmokeTest/Files/syslog.log (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:138)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:93)
+	at java.io.FileReader.&lt;init&gt;(FileReader.java:58)
+	at com.weather.appium.Install_the_app.install(Install_the_app.java:22)
+	at com.weather.RunTest.Smoke_Test.FirstRun(Smoke_Test.java:91)
+</failure>
+    <system-out>8.4iPodTheWeather7.3_421559
+Filepath verifying
+Path is ::/Users/aparna/Documents/Naresh/com.weather.SmokeTest/Files/syslog.log
+File Exist to run
+File deleted successfully !
+</system-out>
+  </testcase>
+  <testcase classname="com.weather.RunTest.Smoke_Test" name="c334150_pulltoRefresh" time="0.264">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.weather.SmokeTestcases.SmokeTest_c334150_Verify_onpulltorefresh.Verify_PulltoRefresh(SmokeTest_c334150_Verify_onpulltorefresh.java:62)
+	at com.weather.RunTest.Smoke_Test.c334150_pulltoRefresh(Smoke_Test.java:115)
+</failure>
+    <system-out>Pull to refresh - Steps Value is ::0
+Capablities - Steps Value is ::0
+FirstRun - Steps Value is ::0
+Factual - Steps Value is ::0
+WFXTG Call - Steps Value is ::0
+Lotame Call - Steps Value is ::0
+Cleanlaunch Call - Steps Value is ::0
+Hourly Call - Steps Value is ::0
+10days Call - Steps Value is ::0
+Maps page - Steps Value is ::0
+Health page - Steps Value is ::0
+News page - Steps Value is ::0
+</system-out>
+  </testcase>
+  <testcase classname="com.weather.RunTest.Smoke_Test" name="c334145_factualCall_onfreshlaunch" time="0.116"/>
+  <testcase classname="com.weather.RunTest.Smoke_Test" name="c334144_verify_WeatheFX_ApiCall" time="0.002">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.weather.SmokeTestcases.SmokeTest_c334144_Verify_WeatheFX_ApiCall.Verify_WeatherFX_Apicall(SmokeTest_c334144_Verify_WeatheFX_ApiCall.java:64)
+	at com.weather.RunTest.Smoke_Test.c334144_verify_WeatheFX_ApiCall(Smoke_Test.java:143)
+</failure>
+    <system-out>Case Started
+</system-out>
+  </testcase>
+  <testcase classname="com.weather.RunTest.Smoke_Test" name="c334153_lotame_call_verify" time="0.025">
+    <failure message="null" type="java.lang.AssertionError">java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.fail(Assert.java:101)
+	at com.weather.SmokeTestcases.SmokeTest_c334153_Verify_Lotame_onApp_Launch.Verify_Lotamecall_onapp_launch(SmokeTest_c334153_Verify_Lotame_onApp_Launch.java:98)
+	at com.weather.RunTest.Smoke_Test.c334153_lotame_call_verify(Smoke_Test.java:154)
+</failure>
+    <system-out>Pull to refresh - Steps Value is ::1
+Capablities - Steps Value is ::0
+FirstRun - Steps Value is ::0
+Factual - Steps Value is ::0
+WFXTG Call - Steps Value is ::2
+Lotame Call - Steps Value is ::0
+Cleanlaunch Call - Steps Value is ::0
+Hourly Call - Steps Value is ::0
+10days Call - Steps Value is ::0
+Maps page - Steps Value is ::0
+Health page - Steps Value is ::0
+News page - Steps Value is ::0
+Case Started
+Log data is not correct
+</system-out>
+  </testcase>
+  <testcase classname="com.weather.RunTest.Smoke_Test" name="c334143_verify_adcals_on_clean_launch" time="0.01">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.weather.Genaral.app_Kill_Relaunch.Kill_realaunch(app_Kill_Relaunch.java:11)
+	at com.weather.SmokeTestcases.SmokeTest_c334143_CleanLaunch.verify_adcals_onclean_launch(SmokeTest_c334143_CleanLaunch.java:52)
+	at com.weather.RunTest.Smoke_Test.c334143_verify_adcals_on_clean_launch(Smoke_Test.java:167)
+</failure>
+    <system-out>Pull to refresh - Steps Value is ::1
+Capablities - Steps Value is ::0
+FirstRun - Steps Value is ::0
+Factual - Steps Value is ::0
+WFXTG Call - Steps Value is ::2
+Lotame Call - Steps Value is ::4
+Cleanlaunch Call - Steps Value is ::0
+Hourly Call - Steps Value is ::0
+10days Call - Steps Value is ::0
+Maps page - Steps Value is ::0
+Health page - Steps Value is ::0
+News page - Steps Value is ::0
+</system-out>
+  </testcase>
+  <testcase classname="com.weather.RunTest.Smoke_Test" name="c334146_Verify_adon_HourlyExtended_page" time="0.001">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.weather.Genaral.app_Kill_Relaunch.Kill_realaunch(app_Kill_Relaunch.java:11)
+	at com.weather.SmokeTestcases.SmokeTest_C334146_Hourly.verify_adpresent_onextendedHourly_page(SmokeTest_C334146_Hourly.java:44)
+	at com.weather.RunTest.Smoke_Test.c334146_Verify_adon_HourlyExtended_page(Smoke_Test.java:174)
+</failure>
+    <system-out>Pull to refresh - Steps Value is ::1
+Capablities - Steps Value is ::0
+FirstRun - Steps Value is ::0
+Factual - Steps Value is ::0
+WFXTG Call - Steps Value is ::2
+Lotame Call - Steps Value is ::4
+Cleanlaunch Call - Steps Value is ::1
+Hourly Call - Steps Value is ::0
+10days Call - Steps Value is ::0
+Maps page - Steps Value is ::0
+Health page - Steps Value is ::0
+News page - Steps Value is ::0
+</system-out>
+  </testcase>
+  <testcase classname="com.weather.RunTest.Smoke_Test" name="c334151_Verify_adon_10DaysExtended_page" time="0.001">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.weather.SmokeTestcases.SmokeTest_C334151_10Days.verify_adpresent_onextendedTendays_page(SmokeTest_C334151_10Days.java:36)
+	at com.weather.RunTest.Smoke_Test.c334151_Verify_adon_10DaysExtended_page(Smoke_Test.java:183)
+</failure>
+    <system-out>Pull to refresh - Steps Value is ::1
+Capablities - Steps Value is ::0
+FirstRun - Steps Value is ::0
+Factual - Steps Value is ::0
+WFXTG Call - Steps Value is ::2
+Lotame Call - Steps Value is ::4
+Cleanlaunch Call - Steps Value is ::1
+Hourly Call - Steps Value is ::1
+10days Call - Steps Value is ::0
+Maps page - Steps Value is ::0
+Health page - Steps Value is ::0
+News page - Steps Value is ::0
+</system-out>
+  </testcase>
+  <testcase classname="com.weather.RunTest.Smoke_Test" name="c334147_Verify_adon_MapsExtended_page" time="0.003">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.weather.SmokeTestcases.SmokeTest_c334147_Map.verify_adpresent_onextendedMap_page(SmokeTest_c334147_Map.java:40)
+	at com.weather.RunTest.Smoke_Test.c334147_Verify_adon_MapsExtended_page(Smoke_Test.java:191)
+</failure>
+    <system-out>Pull to refresh - Steps Value is ::1
+Capablities - Steps Value is ::0
+FirstRun - Steps Value is ::0
+Factual - Steps Value is ::0
+WFXTG Call - Steps Value is ::2
+Lotame Call - Steps Value is ::4
+Cleanlaunch Call - Steps Value is ::1
+Hourly Call - Steps Value is ::1
+10days Call - Steps Value is ::1
+Maps page - Steps Value is ::0
+Health page - Steps Value is ::0
+News page - Steps Value is ::0
+</system-out>
+  </testcase>
+  <testcase classname="com.weather.RunTest.Smoke_Test" name="c334148_Verify_adon_NewsExtended_page" time="0.001">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.weather.SmokeTestcases.SmokeTest_C334148_News.verify_adpresent_onextendedNews_page(SmokeTest_C334148_News.java:35)
+	at com.weather.RunTest.Smoke_Test.c334148_Verify_adon_NewsExtended_page(Smoke_Test.java:202)
+</failure>
+    <system-out>Pull to refresh - Steps Value is ::1
+Capablities - Steps Value is ::0
+FirstRun - Steps Value is ::0
+Factual - Steps Value is ::0
+WFXTG Call - Steps Value is ::2
+Lotame Call - Steps Value is ::4
+Cleanlaunch Call - Steps Value is ::1
+Hourly Call - Steps Value is ::1
+10days Call - Steps Value is ::1
+Maps page - Steps Value is ::1
+Health page - Steps Value is ::0
+News page - Steps Value is ::0
+</system-out>
+  </testcase>
+  <testcase classname="com.weather.RunTest.Smoke_Test" name="C402853_Verifybigbannerad_LSModules" time="0.012">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.weather.Genaral.MoveTo_TestMode.testmode(MoveTo_TestMode.java:18)
+	at com.weather.SmokeTestcases.SmokeTest_C402853_Verifybigbannerad_LSModules.verify_adpresent_onLSModule_page(SmokeTest_C402853_Verifybigbannerad_LSModules.java:33)
+	at com.weather.RunTest.Smoke_Test.C402853_Verifybigbannerad_LSModules(Smoke_Test.java:211)
+</failure>
+    <system-out>Pull to refresh - Steps Value is ::1
+Capablities - Steps Value is ::0
+FirstRun - Steps Value is ::0
+Factual - Steps Value is ::0
+WFXTG Call - Steps Value is ::2
+Lotame Call - Steps Value is ::4
+Cleanlaunch Call - Steps Value is ::1
+Hourly Call - Steps Value is ::1
+10days Call - Steps Value is ::1
+Maps page - Steps Value is ::1
+Health page - Steps Value is ::0
+News page - Steps Value is ::0
+</system-out>
+  </testcase>
+  <testcase classname="com.weather.RunTest.Smoke_Test" name="C414339_Thirdparty_Beacon" time="0.007"/>
+</testsuite>

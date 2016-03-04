@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 10 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-TWC_Smoke_Suite">
+              <span class="suite-name border-failed">TWC_Smoke_Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-TWC_Smoke_Suite">
+                    <span>testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-TWC_Smoke_Suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-TWC_Smoke_Suite">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-TWC_Smoke_Suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-TWC_Smoke_Suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-TWC_Smoke_Suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-TWC_Smoke_Suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">12 methods, 10 failed,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-TWC_Smoke_Suite" class="hide-methods failed suite-TWC_Smoke_Suite"> (hide)</a> <!-- hide-methods failed suite-TWC_Smoke_Suite -->
+                      <a href="#" panel-name="suite-TWC_Smoke_Suite" class="show-methods failed suite-TWC_Smoke_Suite"> (show)</a> <!-- show-methods failed suite-TWC_Smoke_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-TWC_Smoke_Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TWC_Smoke_Suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="C402853_Verifybigbannerad_LSModules">C402853_Verifybigbannerad_LSModules</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TWC_Smoke_Suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="FirstRun">FirstRun</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TWC_Smoke_Suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334143_verify_adcals_on_clean_launch">c334143_verify_adcals_on_clean_launch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TWC_Smoke_Suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334144_verify_WeatheFX_ApiCall">c334144_verify_WeatheFX_ApiCall</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TWC_Smoke_Suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334146_Verify_adon_HourlyExtended_page">c334146_Verify_adon_HourlyExtended_page</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TWC_Smoke_Suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334147_Verify_adon_MapsExtended_page">c334147_Verify_adon_MapsExtended_page</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TWC_Smoke_Suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334148_Verify_adon_NewsExtended_page">c334148_Verify_adon_NewsExtended_page</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TWC_Smoke_Suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334150_pulltoRefresh">c334150_pulltoRefresh</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TWC_Smoke_Suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334151_Verify_adon_10DaysExtended_page">c334151_Verify_adon_10DaysExtended_page</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TWC_Smoke_Suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334153_lotame_call_verify">c334153_lotame_call_verify</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-TWC_Smoke_Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-TWC_Smoke_Suite" class="hide-methods passed suite-TWC_Smoke_Suite"> (hide)</a> <!-- hide-methods passed suite-TWC_Smoke_Suite -->
+                      <a href="#" panel-name="suite-TWC_Smoke_Suite" class="show-methods passed suite-TWC_Smoke_Suite"> (show)</a> <!-- show-methods passed suite-TWC_Smoke_Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-TWC_Smoke_Suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TWC_Smoke_Suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="C414339_Thirdparty_Beacon">C414339_Thirdparty_Beacon</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TWC_Smoke_Suite" title="com.weather.RunTest.Smoke_Test" hash-for-method="c334145_factualCall_onfreshlaunch">c334145_factualCall_onfreshlaunch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-TWC_Smoke_Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-TWC_Smoke_Suite" class="panel TWC_Smoke_Suite">
+          <div class="suite-TWC_Smoke_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.weather.RunTest.Smoke_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="C402853_Verifybigbannerad_LSModules">
+                  </a> <!-- C402853_Verifybigbannerad_LSModules -->
+                  <span class="method-name">C402853_Verifybigbannerad_LSModules</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.weather.Genaral.MoveTo_TestMode.testmode(MoveTo_TestMode.java:18)
+	at com.weather.SmokeTestcases.SmokeTest_C402853_Verifybigbannerad_LSModules.verify_adpresent_onLSModule_page(SmokeTest_C402853_Verifybigbannerad_LSModules.java:33)
+	at com.weather.RunTest.Smoke_Test.C402853_Verifybigbannerad_LSModules(Smoke_Test.java:211)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="FirstRun">
+                  </a> <!-- FirstRun -->
+                  <span class="method-name">FirstRun</span>
+                  <div class="stack-trace">java.io.FileNotFoundException: /Users/aparna/Documents/Naresh/com.weather.SmokeTest/Files/syslog.log (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:138)
+	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:93)
+	at java.io.FileReader.&lt;init&gt;(FileReader.java:58)
+	at com.weather.appium.Install_the_app.install(Install_the_app.java:22)
+	at com.weather.RunTest.Smoke_Test.FirstRun(Smoke_Test.java:91)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334143_verify_adcals_on_clean_launch">
+                  </a> <!-- c334143_verify_adcals_on_clean_launch -->
+                  <span class="method-name">c334143_verify_adcals_on_clean_launch</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.weather.Genaral.app_Kill_Relaunch.Kill_realaunch(app_Kill_Relaunch.java:11)
+	at com.weather.SmokeTestcases.SmokeTest_c334143_CleanLaunch.verify_adcals_onclean_launch(SmokeTest_c334143_CleanLaunch.java:52)
+	at com.weather.RunTest.Smoke_Test.c334143_verify_adcals_on_clean_launch(Smoke_Test.java:167)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334144_verify_WeatheFX_ApiCall">
+                  </a> <!-- c334144_verify_WeatheFX_ApiCall -->
+                  <span class="method-name">c334144_verify_WeatheFX_ApiCall</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.weather.SmokeTestcases.SmokeTest_c334144_Verify_WeatheFX_ApiCall.Verify_WeatherFX_Apicall(SmokeTest_c334144_Verify_WeatheFX_ApiCall.java:64)
+	at com.weather.RunTest.Smoke_Test.c334144_verify_WeatheFX_ApiCall(Smoke_Test.java:143)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334146_Verify_adon_HourlyExtended_page">
+                  </a> <!-- c334146_Verify_adon_HourlyExtended_page -->
+                  <span class="method-name">c334146_Verify_adon_HourlyExtended_page</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.weather.Genaral.app_Kill_Relaunch.Kill_realaunch(app_Kill_Relaunch.java:11)
+	at com.weather.SmokeTestcases.SmokeTest_C334146_Hourly.verify_adpresent_onextendedHourly_page(SmokeTest_C334146_Hourly.java:44)
+	at com.weather.RunTest.Smoke_Test.c334146_Verify_adon_HourlyExtended_page(Smoke_Test.java:174)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334147_Verify_adon_MapsExtended_page">
+                  </a> <!-- c334147_Verify_adon_MapsExtended_page -->
+                  <span class="method-name">c334147_Verify_adon_MapsExtended_page</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.weather.SmokeTestcases.SmokeTest_c334147_Map.verify_adpresent_onextendedMap_page(SmokeTest_c334147_Map.java:40)
+	at com.weather.RunTest.Smoke_Test.c334147_Verify_adon_MapsExtended_page(Smoke_Test.java:191)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334148_Verify_adon_NewsExtended_page">
+                  </a> <!-- c334148_Verify_adon_NewsExtended_page -->
+                  <span class="method-name">c334148_Verify_adon_NewsExtended_page</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.weather.SmokeTestcases.SmokeTest_C334148_News.verify_adpresent_onextendedNews_page(SmokeTest_C334148_News.java:35)
+	at com.weather.RunTest.Smoke_Test.c334148_Verify_adon_NewsExtended_page(Smoke_Test.java:202)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334150_pulltoRefresh">
+                  </a> <!-- c334150_pulltoRefresh -->
+                  <span class="method-name">c334150_pulltoRefresh</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.weather.SmokeTestcases.SmokeTest_c334150_Verify_onpulltorefresh.Verify_PulltoRefresh(SmokeTest_c334150_Verify_onpulltorefresh.java:62)
+	at com.weather.RunTest.Smoke_Test.c334150_pulltoRefresh(Smoke_Test.java:115)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334151_Verify_adon_10DaysExtended_page">
+                  </a> <!-- c334151_Verify_adon_10DaysExtended_page -->
+                  <span class="method-name">c334151_Verify_adon_10DaysExtended_page</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.weather.SmokeTestcases.SmokeTest_C334151_10Days.verify_adpresent_onextendedTendays_page(SmokeTest_C334151_10Days.java:36)
+	at com.weather.RunTest.Smoke_Test.c334151_Verify_adon_10DaysExtended_page(Smoke_Test.java:183)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334153_lotame_call_verify">
+                  </a> <!-- c334153_lotame_call_verify -->
+                  <span class="method-name">c334153_lotame_call_verify</span>
+                  <div class="stack-trace">java.lang.AssertionError: null
+	at com.weather.SmokeTestcases.SmokeTest_c334153_Verify_Lotame_onApp_Launch.Verify_Lotamecall_onapp_launch(SmokeTest_c334153_Verify_Lotame_onApp_Launch.java:98)
+	at com.weather.RunTest.Smoke_Test.c334153_lotame_call_verify(Smoke_Test.java:154)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TWC_Smoke_Suite-class-failed -->
+          <div class="suite-TWC_Smoke_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.weather.RunTest.Smoke_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="C414339_Thirdparty_Beacon">
+                  </a> <!-- C414339_Thirdparty_Beacon -->
+                  <span class="method-name">C414339_Thirdparty_Beacon</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="c334145_factualCall_onfreshlaunch">
+                  </a> <!-- c334145_factualCall_onfreshlaunch -->
+                  <span class="method-name">c334145_factualCall_onfreshlaunch</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TWC_Smoke_Suite-class-passed -->
+        </div> <!-- panel TWC_Smoke_Suite -->
+        <div panel-name="test-xml-TWC_Smoke_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">/Users/aparna/Documents/Naresh/com.weather.SmokeTest/testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite verbose=&quot;0&quot; name=&quot;TWC_Smoke_Suite&quot; parallel=&quot;none&quot;&gt;
+  &lt;test name=&quot;TWC_Smoke_Test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.weather.RunTest.Smoke_Test&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- TWC_Smoke_Test --&gt;
+&lt;/suite&gt; &lt;!-- TWC_Smoke_Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-TWC_Smoke_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for TWC_Smoke_Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">TWC_Smoke_Test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-TWC_Smoke_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for TWC_Smoke_Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-TWC_Smoke_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for TWC_Smoke_Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_TWC_Smoke_Suite');
+function tableData_TWC_Smoke_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(12);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'FirstRun')
+data.setCell(0, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(0, 3, 3415);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'c334150_pulltoRefresh')
+data.setCell(1, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(1, 3, 265);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'c334145_factualCall_onfreshlaunch')
+data.setCell(2, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(2, 3, 117);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'c334153_lotame_call_verify')
+data.setCell(3, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(3, 3, 24);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'C402853_Verifybigbannerad_LSModules')
+data.setCell(4, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(4, 3, 12);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'c334143_verify_adcals_on_clean_launch')
+data.setCell(5, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(5, 3, 10);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'C414339_Thirdparty_Beacon')
+data.setCell(6, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(6, 3, 7);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'c334147_Verify_adon_MapsExtended_page')
+data.setCell(7, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(7, 3, 3);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'c334144_verify_WeatheFX_ApiCall')
+data.setCell(8, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(8, 3, 2);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'c334151_Verify_adon_10DaysExtended_page')
+data.setCell(9, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(9, 3, 1);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'c334148_Verify_adon_NewsExtended_page')
+data.setCell(10, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(10, 3, 1);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'c334146_Verify_adon_HourlyExtended_page')
+data.setCell(11, 2, 'com.weather.RunTest.Smoke_Test')
+data.setCell(11, 3, 1);
+window.suiteTableData['TWC_Smoke_Suite']= { tableData: data, tableDiv: 'times-div-TWC_Smoke_Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <div id="times-div-TWC_Smoke_Suite">
+              </div> <!-- times-div-TWC_Smoke_Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-TWC_Smoke_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for TWC_Smoke_Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">c334145_factualCall_onfreshlaunch</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">STEP2</span>
+                <span class="reporter-method-output">STEP3</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">c334147_Verify_adon_MapsExtended_page</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">STEP7</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">c334153_lotame_call_verify</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">STEP5</span>
+                <span class="reporter-method-output">STEP6</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">c334144_verify_WeatheFX_ApiCall</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">STEP4</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-TWC_Smoke_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-TWC_Smoke_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.weather.RunTest.Smoke_Test</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">beforeTest</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">32 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">FirstRun</span>
+                <span class="method-start">47 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=FirstRun status=FAILURE method=Smoke_Test.FirstRun()[pri:0, instance:com.weather.Ru...)</span>
+                <span class="method-start">3590 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">c334150_pulltoRefresh</span>
+                <span class="method-start">4135 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334150_pulltoRefresh status=FAILURE method=Smoke_Test.c334150_pulltoRefresh()[pri:...)</span>
+                <span class="method-start">4401 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">c334145_factualCall_onfreshlaunch</span>
+                <span class="method-start">4403 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334145_factualCall_onfreshlaunch status=SUCCESS method=Smoke_Test.c334145_factualC...)</span>
+                <span class="method-start">4520 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">c334144_verify_WeatheFX_ApiCall</span>
+                <span class="method-start">4521 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334144_verify_WeatheFX_ApiCall status=FAILURE method=Smoke_Test.c334144_verify_Wea...)</span>
+                <span class="method-start">4524 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">c334153_lotame_call_verify</span>
+                <span class="method-start">4526 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334153_lotame_call_verify status=FAILURE method=Smoke_Test.c334153_lotame_call_ver...)</span>
+                <span class="method-start">4552 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">c334143_verify_adcals_on_clean_launch</span>
+                <span class="method-start">4553 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334143_verify_adcals_on_clean_launch status=FAILURE method=Smoke_Test.c334143_veri...)</span>
+                <span class="method-start">4565 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">c334146_Verify_adon_HourlyExtended_page</span>
+                <span class="method-start">4568 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334146_Verify_adon_HourlyExtended_page status=FAILURE method=Smoke_Test.c334146_Ve...)</span>
+                <span class="method-start">4570 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">c334151_Verify_adon_10DaysExtended_page</span>
+                <span class="method-start">4571 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334151_Verify_adon_10DaysExtended_page status=FAILURE method=Smoke_Test.c334151_Ve...)</span>
+                <span class="method-start">4573 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">c334147_Verify_adon_MapsExtended_page</span>
+                <span class="method-start">4574 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334147_Verify_adon_MapsExtended_page status=FAILURE method=Smoke_Test.c334147_Veri...)</span>
+                <span class="method-start">4578 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">c334148_Verify_adon_NewsExtended_page</span>
+                <span class="method-start">4579 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=c334148_Verify_adon_NewsExtended_page status=FAILURE method=Smoke_Test.c334148_Veri...)</span>
+                <span class="method-start">4581 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">C402853_Verifybigbannerad_LSModules</span>
+                <span class="method-start">4582 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=C402853_Verifybigbannerad_LSModules status=FAILURE method=Smoke_Test.C402853_Verify...)</span>
+                <span class="method-start">4595 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">C414339_Thirdparty_Beacon</span>
+                <span class="method-start">4597 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">test([TestResult name=C414339_Thirdparty_Beacon status=SUCCESS method=Smoke_Test.C414339_Thirdparty_Beaco...)</span>
+                <span class="method-start">4604 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-test after">
+                <span class="method-name">afterTest</span>
+                <span class="method-start">4606 ms</span>
+              </div> <!-- configuration-test after -->
+              <div class="configuration-suite after">
+                <span class="method-name">movefiles</span>
+                <span class="method-start">4699 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>
